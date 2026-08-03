@@ -1,0 +1,1476 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../super_admin_overview/">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Install CA - CA Admin Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ca-deployment-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="CA Admin Guide" class="md-header__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CA Admin Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Install CA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CA Admin Guide" class="md-nav__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    CA Admin Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Install CA
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Install CA
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-minimum-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Minimum Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Architecture Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dns-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. DNS Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nginx-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. NGINX &amp; TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-backend-configuration-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Backend Configuration (.env)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-licensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Licensing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-start-the-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Start the Backend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-frontend-web-application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Frontend (Web Application) Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Verification
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tenant Super Admin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tenant Super Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview & Multi-Tenancy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_tenants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tenant Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_administrators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Super Admins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tenant Portal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tenant Portal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Certificate Requests
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Certificate Requests
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_request_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_request_create/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request a Certificate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_authorities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificate Authorities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation_authorities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validation Authorities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_profiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificate Profiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto_sources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crypto Sources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../key_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Keys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../approvals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approvals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../users_roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operators & Roles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_15" id="__nav_4_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_15">
+            <span class="md-nav__icon md-icon"></span>
+            Settings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_general/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Log Rotation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_branding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Profile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screen_inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module & Feature Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenshot_inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshot Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gap_analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gap Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-minimum-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Minimum Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Architecture Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dns-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. DNS Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nginx-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. NGINX &amp; TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-backend-configuration-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Backend Configuration (.env)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-licensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Licensing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-start-the-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Start the Backend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-frontend-web-application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Frontend (Web Application) Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Verification
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ca-deployment-guide"><strong>CA Deployment Guide</strong></h1>
+<p>This guide walks through installing the <strong>Certificate Authority (CA)</strong> platform on an in-house server. The backend services and frontend run as Docker containers orchestrated by Docker Compose.</p>
+<hr />
+<h2 id="1-minimum-requirements"><strong>1. Minimum Requirements</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Operating System</strong></td>
+<td>Ubuntu 24.04 LTS</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td>4–8 cores</td>
+</tr>
+<tr>
+<td><strong>Memory (RAM)</strong></td>
+<td>8–16 GB</td>
+</tr>
+<tr>
+<td><strong>Disk Space</strong></td>
+<td>50 GB+</td>
+</tr>
+<tr>
+<td><strong>Required Software</strong></td>
+<td>Docker, Docker Compose, NGINX</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-architecture-overview"><strong>2. Architecture Overview</strong></h2>
+<p>The CA platform is composed of the following containers (see <code>docker-compose.yml</code>):</p>
+<ul>
+<li><strong>ca</strong> – The FastAPI CA API service (host port <code>28000</code> → container <code>8000</code>). Issues and manages certificates, CAs, profiles, and templates.</li>
+<li><strong>ocsp</strong> – The OCSP responder / Validation Authority service (host port <code>28001</code>), run in <code>OCSP_ONLY</code> mode.</li>
+<li><strong>celery_worker</strong> – Background worker for CRL generation and OCSP sync tasks.</li>
+<li><strong>celery_beat</strong> – Scheduler for periodic tasks (CRL publishing, OCSP sync).</li>
+<li><strong>postgres</strong> – PostgreSQL 16 database (internal only by default).</li>
+<li><strong>redis</strong> – Redis 7 broker/result backend for Celery (internal only by default).</li>
+</ul>
+<p>The <strong>web application</strong> (frontend) is deployed separately and points at the CA API via its <code>config.json</code>.</p>
+<hr />
+<h2 id="3-docker-installation"><strong>3. Docker Installation</strong></h2>
+<p>Install Docker Engine and the Compose plugin:</p>
+<pre><code class="language-bash"># Add Docker's official GPG key
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources
+echo \
+  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;) stable&quot; | \
+  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+sudo apt-get update
+
+# Install Docker Engine and Compose
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+# Allow Docker without sudo
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+</code></pre>
+<hr />
+<h2 id="4-dns-configuration"><strong>4. DNS Configuration</strong></h2>
+<p>Create DNS entries for your CA environment (replace <code>YOURDOMAIN.com</code>):</p>
+<pre><code>ca.YOURDOMAIN.com        # Web application (frontend)
+api.ca.YOURDOMAIN.com    # CA API backend
+ocsp.ca.YOURDOMAIN.com   # OCSP responder
+crl.ca.YOURDOMAIN.com    # CRL distribution
+</code></pre>
+<hr />
+<h2 id="5-nginx-tls"><strong>5. NGINX &amp; TLS</strong></h2>
+<p>Install NGINX as a reverse proxy and obtain TLS certificates (e.g. Let's Encrypt via Certbot):</p>
+<pre><code class="language-bash">sudo apt install nginx -y
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot certonly --standalone -d ca.YOURDOMAIN.com -d api.ca.YOURDOMAIN.com -d ocsp.ca.YOURDOMAIN.com -d crl.ca.YOURDOMAIN.com
+</code></pre>
+<p>Configure NGINX server blocks to proxy:</p>
+<ul>
+<li><code>api.ca.YOURDOMAIN.com</code> → <code>http://127.0.0.1:28000</code></li>
+<li><code>ocsp.ca.YOURDOMAIN.com</code> → <code>http://127.0.0.1:28001</code></li>
+<li><code>ca.YOURDOMAIN.com</code> → the frontend container (port <code>8080</code>)</li>
+</ul>
+<hr />
+<h2 id="6-backend-configuration-env"><strong>6. Backend Configuration (.env)</strong></h2>
+<p>Copy the environment template and populate it. <strong>Never commit <code>.env</code>.</strong></p>
+<pre><code class="language-bash">cd dlabs-ca
+cp .env.example .env
+</code></pre>
+<p>Set the required values:</p>
+<ul>
+<li><strong>Application:</strong> <code>APP_NAME</code>, <code>APP_ENV</code> (<code>prod</code> for production), <code>DEBUG=false</code>.</li>
+<li><strong>Security (required):</strong><ul>
+<li><code>JWT_SECRET_KEY</code> — generate: <code>python -c "import secrets;print(secrets.token_urlsafe(48))"</code></li>
+<li><code>KEY_PASSWORD_FERNET_KEY</code> — generate: <code>python -c "from cryptography.fernet import Fernet;print(Fernet.generate_key().decode())"</code></li>
+</ul>
+</li>
+<li><strong>Database:</strong> <code>POSTGRES_DB</code>, <code>POSTGRES_USER</code>, <code>POSTGRES_PASSWORD</code> (use unique non-default credentials).</li>
+<li><strong>Network:</strong> <code>CORS_ALLOW_ORIGINS</code> (e.g. <code>https://ca.YOURDOMAIN.com</code>) and <code>ALLOWED_HOSTS</code>. Wildcards are forbidden in production.</li>
+<li><strong>CRL / OCSP:</strong> <code>CRL_PUBLISH_BASE_URL</code> (e.g. <code>https://crl.ca.YOURDOMAIN.com</code>) and <code>OCSP_BASE_URL</code> (e.g. <code>https://ocsp.ca.YOURDOMAIN.com/api/ocsp</code>).</li>
+<li><strong>Logging:</strong> <code>LOG_TO_FILE</code>, <code>LOG_FILE_PATH</code>, rotation settings, and optional <code>LOG_SIGNING_*</code>.</li>
+</ul>
+<blockquote>
+<p>In production the configuration enforces: <code>DEBUG=false</code>, no wildcard CORS/hosts, and <code>OCSP_SYNC_VERIFY_TLS=true</code>.</p>
+</blockquote>
+<hr />
+<h2 id="7-licensing"><strong>7. Licensing</strong></h2>
+<p>A license file issued by Dictalabs is required for the CA API service. Generate the system UUID and share it to obtain your license:</p>
+<pre><code class="language-bash">sudo ./scripts/get-system-uuid.sh   # if provided with your package
+</code></pre>
+<p>Place the license file in the <code>license/</code> directory (mounted into the containers as <code>ca_license</code>).</p>
+<hr />
+<h2 id="8-start-the-backend"><strong>8. Start the Backend</strong></h2>
+<p>From the <code>dlabs-ca</code> directory:</p>
+<pre><code class="language-bash">docker compose pull   # if using prebuilt images
+docker compose up -d
+</code></pre>
+<p>Database migrations (Alembic) run on startup. Verify the containers:</p>
+<pre><code class="language-bash">docker ps -a
+</code></pre>
+<p>View logs for a service (stop with <strong>Ctrl+C</strong>):</p>
+<pre><code class="language-bash">docker logs -f dlabs-ca
+docker logs -f ca_ocsp
+docker logs -f ca_celery_worker
+docker logs -f ca_celery_beat
+</code></pre>
+<hr />
+<h2 id="9-frontend-web-application-configuration"><strong>9. Frontend (Web Application) Configuration</strong></h2>
+<p>Deploy the CA web application package and point it at the backend API. Edit <code>config.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;API_BASE_URL&quot;: &quot;https://api.ca.YOURDOMAIN.com/api/v1&quot;,
+  &quot;PUBLIC_API_BASE_URL&quot;: &quot;https://api.ca.YOURDOMAIN.com&quot;
+}
+</code></pre>
+<p>Start the frontend container:</p>
+<pre><code class="language-bash">docker compose up -d
+</code></pre>
+<hr />
+<h2 id="10-verification"><strong>10. Verification</strong></h2>
+<p>After deployment:</p>
+<ul>
+<li>Access the <strong>CA web app</strong> at <code>https://ca.YOURDOMAIN.com</code> and sign in (see <a href="../">Home → Login</a>).</li>
+<li>Confirm the API health endpoint responds at <code>https://api.ca.YOURDOMAIN.com/health</code>.</li>
+<li>Confirm the OCSP service responds at <code>https://ocsp.ca.YOURDOMAIN.com</code>.</li>
+</ul>
+<p>Once signed in, proceed to create your first <a href="../certificate_authorities/">Certificate Authority</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Dictalabs. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../extra.js"></script>
+      
+    
+  </body>
+</html>

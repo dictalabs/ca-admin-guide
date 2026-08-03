@@ -1,0 +1,107 @@
+/* Reset default margin and padding */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Modify the top border with a white background and a bottom line in #EB9715 */
+.md-header {
+  background-color: white; /* White top border */
+  border-bottom: 1px solid #EB9715; /* Bottom line in the top border */
+  box-shadow: none; /* Remove any default shadow */
+}
+
+.md-footer {
+  background-color: black; /* White footer */
+}
+
+.md-footer-meta {
+  color: white !important; /* Ensure footer text is visible */
+  text-align: center; /* Center align the footer text */
+}
+
+/* Ensure content width and spacing adjustments if needed */
+.md-content {
+  max-width: 100%; /* Adjust content width */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Adjustments for table of contents (if necessary) */
+.md-nav__item--active > a {
+  color: #EB9715 !important; /* Highlight current section in navigation */
+}
+
+.md-nav__item--active > a:hover {
+  background-color: rgba(235, 151, 21, 0.1);
+}
+
+.md-header__title {
+  color: #484D54 !important;
+}
+
+.md-nav__item a:hover {
+  color: #EB9715 !important;
+}
+
+/* Change text color for expandable navigation items on hover */
+.md-nav__item--nested > .md-nav__link:hover {
+  color: #EB9715 !important;
+}
+
+/* Ensure expandable navigation items remain #EB9715 when clicked */
+.md-nav__item--nested > .md-nav__link:focus,
+.md-nav__item--nested > .md-nav__link:active {
+  color: #EB9715 !important;
+}
+
+/* Scrollbar styling for all elements */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Thumb of the scrollbar (track) */
+::-webkit-scrollbar-thumb {
+  background-color: #888 !important;  /* Medium grey */
+  border-radius: 4px;
+}
+
+/* Hover color for the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555 !important; /* Dark grey on hover */
+}
+
+/* Apply the scrollbar customization to the left navigation pane */
+.md-sidebar::-webkit-scrollbar,
+.md-sidebar__inner::-webkit-scrollbar,
+.md-nav::-webkit-scrollbar {
+  width: 8px !important;  /* Enforce width */
+}
+
+/* Thumb customization for the left navigation panel */
+.md-sidebar::-webkit-scrollbar-thumb,
+.md-sidebar__inner::-webkit-scrollbar-thumb,
+.md-nav::-webkit-scrollbar-thumb {
+  background-color: #888 !important; /* Medium grey */
+  border-radius: 4px !important;
+}
+
+/* Hover effect for the left navigation pane's scrollbar */
+.md-sidebar::-webkit-scrollbar-thumb:hover,
+.md-sidebar__inner::-webkit-scrollbar-thumb:hover,
+.md-nav::-webkit-scrollbar-thumb:hover {
+  background-color: #555 !important; /* Dark grey */
+}
+
+/* Firefox compatibility for scrollbar */
+.md-sidebar,
+.md-sidebar__inner,
+.md-nav {
+  scrollbar-color: #888 #f0f0f0 !important; /* Thumb color, track color */
+}
+
+.md-sidebar:hover,
+.md-sidebar__inner:hover,
+.md-nav:hover {
+  scrollbar-color: #555 #f0f0f0 !important; /* Hover color */
+}

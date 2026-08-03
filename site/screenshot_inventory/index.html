@@ -1,0 +1,1455 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../module_inventory/">
+      
+      
+        <link rel="next" href="../gap_analysis/">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Screenshot Inventory - CA Admin Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#screenshot-inventory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="CA Admin Guide" class="md-header__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CA Admin Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Screenshot Inventory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CA Admin Guide" class="md-nav__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    CA Admin Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install CA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tenant Super Admin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tenant Super Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview & Multi-Tenancy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_tenants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tenant Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_administrators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Super Admins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../super_admin_license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tenant Portal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tenant Portal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Certificate Requests
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Certificate Requests
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_request_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_request_create/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request a Certificate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_authorities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificate Authorities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation_authorities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validation Authorities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate_profiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificate Profiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto_sources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crypto Sources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../key_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Keys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../approvals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approvals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../users_roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operators & Roles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_15" id="__nav_4_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_15">
+            <span class="md-nav__icon md-icon"></span>
+            Settings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_general/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Log Rotation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings_branding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Profile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screen_inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module & Feature Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Screenshot Inventory
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Screenshot Inventory
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tenant-super-admin-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenant Super Admin portal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenant-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenant portal
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gap_analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gap Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tenant-super-admin-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenant Super Admin portal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenant-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenant portal
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="screenshot-inventory">Screenshot Inventory</h1>
+<p>All screenshots captured during the live audit, stored in <code>docs/images/</code>.</p>
+<h2 id="tenant-super-admin-portal">Tenant Super Admin portal</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01_Login.png</td>
+<td>Super Admin sign-in</td>
+</tr>
+<tr>
+<td>02_SuperAdmin_Tenants_List.png</td>
+<td>Tenants list</td>
+</tr>
+<tr>
+<td>03_SuperAdmin_Tenant_ActionsMenu.png</td>
+<td>Tenant row actions (Suspend/Delete)</td>
+</tr>
+<tr>
+<td>04_SuperAdmin_Create_Tenant.png</td>
+<td>Create Tenant dialog</td>
+</tr>
+<tr>
+<td>05_SuperAdmin_Tenant_Detail.png</td>
+<td>Tenant Detail (General, Quotas, rate limit)</td>
+</tr>
+<tr>
+<td>06_SuperAdmin_Administrators_List.png</td>
+<td>Super Admins list</td>
+</tr>
+<tr>
+<td>07_SuperAdmin_Administrator_ActionsMenu.png</td>
+<td>Admin row actions (Delete)</td>
+</tr>
+<tr>
+<td>08_SuperAdmin_Create_Administrator.png</td>
+<td>Create Administrator dialog</td>
+</tr>
+<tr>
+<td>09_SuperAdmin_License.png</td>
+<td>License Management</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tenant-portal">Tenant portal</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10_Tenant_Login.png</td>
+<td>Tenant sign-in (branded)</td>
+</tr>
+<tr>
+<td>11_Tenant_Dashboard_Overview.png</td>
+<td>Dashboard – Overview</td>
+</tr>
+<tr>
+<td>12_Tenant_Dashboard_RecentActivity.png</td>
+<td>Dashboard – Recent Activity</td>
+</tr>
+<tr>
+<td>13_Tenant_Dashboard_CAs.png</td>
+<td>Dashboard – Certificate Authorities</td>
+</tr>
+<tr>
+<td>14_Tenant_Dashboard_SystemHealth.png</td>
+<td>Dashboard – System Health</td>
+</tr>
+<tr>
+<td>15_Tenant_Certificates_List.png</td>
+<td>Certificates list</td>
+</tr>
+<tr>
+<td>16_Tenant_CertRequests_List.png</td>
+<td>Requests List</td>
+</tr>
+<tr>
+<td>17_Tenant_CertRequest_ViewDialog.png</td>
+<td>Request Details dialog</td>
+</tr>
+<tr>
+<td>18_Tenant_RequestCertificate_Step1.png</td>
+<td>Request wizard – Step 1 (profiles)</td>
+</tr>
+<tr>
+<td>19_Tenant_RequestCertificate_Form.png</td>
+<td>Request wizard – full form</td>
+</tr>
+<tr>
+<td>20_Tenant_RequestCertificate_GenerateKey.png</td>
+<td>Request wizard – Generate Key + CSR</td>
+</tr>
+<tr>
+<td>21_Tenant_CertificateAuthorities.png</td>
+<td>CA page + list</td>
+</tr>
+<tr>
+<td>22_Tenant_CA_KeyConfiguration.png</td>
+<td>CA – Key Configuration</td>
+</tr>
+<tr>
+<td>23_Tenant_CA_CertificateData.png</td>
+<td>CA – Certificate Data</td>
+</tr>
+<tr>
+<td>24_Tenant_CA_Directives.png</td>
+<td>CA – Directives</td>
+</tr>
+<tr>
+<td>25_Tenant_CA_CRLSettings.png</td>
+<td>CA – CRL Settings</td>
+</tr>
+<tr>
+<td>26_Tenant_CA_Distribution.png</td>
+<td>CA – Distribution</td>
+</tr>
+<tr>
+<td>27_Tenant_CA_CreateDialog.png</td>
+<td>Create CA dialog</td>
+</tr>
+<tr>
+<td>28_Tenant_VA_ValidationAuthorities.png</td>
+<td>VA – Validation Authorities</td>
+</tr>
+<tr>
+<td>29_Tenant_VA_ExternalCAs.png</td>
+<td>VA – External CAs</td>
+</tr>
+<tr>
+<td>30_Tenant_VA_SyncDiagnostics.png</td>
+<td>VA – Sync Diagnostics</td>
+</tr>
+<tr>
+<td>31_Tenant_VA_CreateDialog.png</td>
+<td>Create VA dialog</td>
+</tr>
+<tr>
+<td>32_Tenant_CertificateProfiles_List.png</td>
+<td>Profiles list</td>
+</tr>
+<tr>
+<td>33_Tenant_Profile_CreateDialog.png</td>
+<td>Create Profile dialog</td>
+</tr>
+<tr>
+<td>34_Tenant_CryptoSources_List.png</td>
+<td>Crypto Sources list</td>
+</tr>
+<tr>
+<td>35_Tenant_CryptoSource_AddDialog.png</td>
+<td>Add Crypto Source dialog</td>
+</tr>
+<tr>
+<td>36_Tenant_Connectors.png</td>
+<td>Connectors – Configuration</td>
+</tr>
+<tr>
+<td>37_Tenant_Connector_Monitoring.png</td>
+<td>Connector – Monitoring</td>
+</tr>
+<tr>
+<td>38_Tenant_Connector_Logs.png</td>
+<td>Connector – Logs</td>
+</tr>
+<tr>
+<td>39_Tenant_Connector_DLQ.png</td>
+<td>Connector – DLQ</td>
+</tr>
+<tr>
+<td>40_Tenant_Connector_AddDialog.png</td>
+<td>Add Connector dialog</td>
+</tr>
+<tr>
+<td>41_Tenant_Notifications_List.png</td>
+<td>Notifications list</td>
+</tr>
+<tr>
+<td>42_Tenant_Notification_CreateDialog.png</td>
+<td>Create Notification dialog</td>
+</tr>
+<tr>
+<td>43_Tenant_APIKeys_List.png</td>
+<td>API Keys list</td>
+</tr>
+<tr>
+<td>44_Tenant_APIKey_GenerateDialog.png</td>
+<td>Generate API Key dialog</td>
+</tr>
+<tr>
+<td>45_Tenant_Approvals_List.png</td>
+<td>Approvals queue</td>
+</tr>
+<tr>
+<td>46_Tenant_Templates_List.png</td>
+<td>Templates list</td>
+</tr>
+<tr>
+<td>47_Tenant_Template_CreateDialog.png</td>
+<td>Create Template – General</td>
+</tr>
+<tr>
+<td>48_Tenant_Template_Permissions.png</td>
+<td>Create Template – Permissions</td>
+</tr>
+<tr>
+<td>49_Tenant_Template_Extensions.png</td>
+<td>Create Template – Extensions</td>
+</tr>
+<tr>
+<td>50_Tenant_Template_ValidationData.png</td>
+<td>Create Template – Validation Data</td>
+</tr>
+<tr>
+<td>51_Tenant_Template_SubjectFields.png</td>
+<td>Create Template – Subject Fields</td>
+</tr>
+<tr>
+<td>52_Tenant_Template_SANConstraints.png</td>
+<td>Create Template – SAN Constraints</td>
+</tr>
+<tr>
+<td>53_Tenant_Operators_List.png</td>
+<td>Operator Management</td>
+</tr>
+<tr>
+<td>54_Tenant_Operator_CreateDialog.png</td>
+<td>Create Operator dialog</td>
+</tr>
+<tr>
+<td>55_Tenant_Roles_List.png</td>
+<td>Roles &amp; Permissions</td>
+</tr>
+<tr>
+<td>56_Tenant_Role_CreateDialog.png</td>
+<td>Create Role dialog</td>
+</tr>
+<tr>
+<td>57_Tenant_Logs_Audit.png</td>
+<td>Logs list</td>
+</tr>
+<tr>
+<td>58_Tenant_Log_DetailDialog.png</td>
+<td>Log detail dialog</td>
+</tr>
+<tr>
+<td>59_Tenant_Settings_General.png</td>
+<td>General Settings</td>
+</tr>
+<tr>
+<td>60_Tenant_Settings_LogRotation.png</td>
+<td>Log Rotation</td>
+</tr>
+<tr>
+<td>61_Tenant_Settings_Branding.png</td>
+<td>Branding</td>
+</tr>
+<tr>
+<td>62_Tenant_Profile.png</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<td>63_Tenant_Profile_EditDialog.png</td>
+<td>Edit Profile dialog</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Dictalabs. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../extra.js"></script>
+      
+    
+  </body>
+</html>
