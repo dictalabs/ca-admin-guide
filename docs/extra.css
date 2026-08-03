@@ -1,0 +1,64 @@
+/* Modern UI Styling for CA Admin Guide */
+
+/* Image & Screenshot Enhancements */
+.md-content img {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-md-color-scheme="slate"] .md-content img {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.md-content img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+}
+
+/* Admonition & Callout Styling */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Modern Table Styling */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+}
+
+/* Code Block Enhancements */
+.md-typeset pre {
+  border-radius: 8px;
+}
+
+/* Center Footer Copyright Notice */
+.md-footer-meta__inner {
+  display: flex;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.md-copyright {
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}

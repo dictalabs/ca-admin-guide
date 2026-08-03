@@ -4,25 +4,25 @@
 
 | Module | Portal | Purpose | Page |
 | ------ | ------ | ------- | ---- |
-| Tenant Management | Super Admin | Provision/govern tenants, quotas, lifecycle | [link](super_admin_tenants.md) |
-| Super Admins | Super Admin | Manage platform-wide admin accounts | [link](super_admin_administrators.md) |
-| License Management | Super Admin | License, modules, capabilities, usage | [link](super_admin_license.md) |
-| Dashboard | Tenant | Metrics, alerts, health | [link](dashboard.md) |
-| Certificates | Tenant | Issued certificate inventory + revoke | [link](certificates.md) |
-| Certificate Requests | Tenant | Request list + issuance wizard | [list](certificate_request_list.md) / [create](certificate_request_create.md) |
-| Certificate Authorities | Tenant | Root/Intermediate/External CA config | [link](certificate_authorities.md) |
-| Validation Authorities | Tenant | OCSP responders, external CAs, sync | [link](validation_authorities.md) |
-| Certificate Profiles | Tenant | Issuance policy profiles | [link](certificate_profiles.md) |
-| Crypto Sources | Tenant | HSM/PKCS#11/software key stores | [link](crypto_sources.md) |
-| Connectors | Tenant | SIEM/SMTP/SYSLOG/Crypto Engine integrations | [link](connectors.md) |
-| Notifications | Tenant | Alert schedules | [link](notifications.md) |
-| API Keys | Tenant | Scoped programmatic access | [link](key_management.md) |
-| Approvals | Tenant | Dual-control approval queue | [link](approvals.md) |
-| Templates | Tenant | Certificate blueprints | [link](templates.md) |
-| Operators & Roles | Tenant | RBAC: users, roles, permissions | [link](users_roles.md) |
-| Logs | Tenant | Immutable audit trail | [link](audit.md) |
-| Settings | Tenant | General, Log Rotation, Branding | [general](settings_general.md) |
-| User Profile | Tenant | Account, MFA, effective permissions | [link](profile.md) |
+| Tenant Management | Super Admin | Provision/govern tenants, quotas, lifecycle | [link](03_create_tenant.md) |
+| Super Admins | Super Admin | Manage platform-wide admin accounts | [link](04_super_admins.md) |
+| License Management | Super Admin | License, modules, capabilities, usage | [link](02_license.md) |
+| Dashboard | Tenant | Metrics, alerts, health | [link](06_dashboard.md) |
+| Certificates | Tenant | Issued certificate inventory + revoke | [link](18_certificates.md) |
+| Certificate Requests | Tenant | Request list + issuance wizard | [list](17_request_certificate.md) / [create](17_request_certificate.md) |
+| Certificate Authorities | Tenant | Root/Intermediate/External CA config | [link](12_create_root_ca.md) |
+| Validation Authorities | Tenant | OCSP responders, external CAs, sync | [link](15_validation_authority.md) |
+| Certificate Profiles | Tenant | Issuance policy profiles | [link](16_certificate_profiles.md) |
+| Crypto Sources | Tenant | HSM/PKCS#11/software key stores | [link](10_crypto_sources.md) |
+| Connectors | Tenant | SIEM/SMTP/SYSLOG/Crypto Engine integrations | [link](09_connectors.md) |
+| Notifications | Tenant | Alert schedules | [link](20_notifications.md) |
+| API Keys | Tenant | Scoped programmatic access | [link](21_api_keys.md) |
+| Approvals | Tenant | Dual-control approval queue | [link](19_approvals.md) |
+| Templates | Tenant | Certificate blueprints | [link](11_templates.md) |
+| Operators & Roles | Tenant | RBAC: users, roles, permissions | [link](08_operators.md) |
+| Logs | Tenant | Immutable audit trail | [link](22_logs.md) |
+| Settings | Tenant | General, Log Rotation, Branding | [general](23_settings_general.md) |
+| User Profile | Tenant | Account, MFA, effective permissions | [link](26_user_profile.md) |
 
 ## Feature Inventory
 
@@ -50,5 +50,5 @@
 
 ## Permission catalog
 
-See the full assignable permission list in [API Keys](key_management.md#permission-catalog-assignable-scopes)
-— the same catalog backs [role definitions](users_roles.md).
+See the full assignable permission list in [API Keys](21_api_keys.md#permission-catalog)
+— the same catalog backs [role definitions](08_operators.md).

@@ -8,8 +8,8 @@ modules.
 
 | Module | Missing Section | Required Update |
 | ------ | --------------- | --------------- |
-| Multi-Tenancy | Entire concept absent | Add tenant isolation model (schema-per-tenant, subdomain routing, soft/hard delete) — see [Overview](super_admin_overview.md) |
-| Tenant Super Admin portal | Entire portal absent | New chapter: [Tenant Management](super_admin_tenants.md), [Super Admins](super_admin_administrators.md), [License](super_admin_license.md) |
+| Multi-Tenancy | Entire concept absent | Add tenant isolation model (schema-per-tenant, subdomain routing, soft/hard delete) — see [Overview](01_super_admin_overview.md) |
+| Tenant Super Admin portal | Entire portal absent | New chapter: [Tenant Management](03_create_tenant.md), [Super Admins](04_super_admins.md), [License](02_license.md) |
 | Tenant Management | No coverage | Create-tenant fields (immutable subdomain, quotas, initial admin), lifecycle (suspend/reactivate/soft-delete) |
 | Super Admins | No coverage | System administrator CRUD, 12-char password policy |
 | License Management | No coverage | License modules (CA/VA), capabilities, usage quotas, per-tenant usage, upload |

@@ -181,4 +181,4 @@ After deployment:
 - Confirm the API health endpoint responds at `https://api.ca.YOURDOMAIN.com/health`.
 - Confirm the OCSP service responds at `https://ocsp.ca.YOURDOMAIN.com`.
 
-Once signed in, proceed to create your first [Certificate Authority](certificate_authorities.md).
+Once signed in, proceed to create your first [Certificate Authority](12_create_root_ca.md).

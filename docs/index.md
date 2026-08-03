@@ -3,61 +3,78 @@
 ## Overview
 
 The **Certificate Authority (CA)** platform is a multi-tenant system for operating a private
-Public Key Infrastructure (PKI). It lets administrators build CA hierarchies, issue and revoke
-certificates, run OCSP validation, enforce issuance policy through templates and profiles, and
-govern access with role-based permissions and approval workflows.
+Public Key Infrastructure (PKI). This guide is organized as a **configuration workflow** — follow
+the steps in order to go from an empty system to issuing certificates.
 
 The platform has **two portals**:
 
-| Portal | Audience | URL pattern | Covered in |
-| ------ | -------- | ----------- | ---------- |
-| **Tenant Super Admin** | Platform operators who provision and govern tenants | `https://admin.<domain>` | [Tenant Super Admin & Multi-Tenancy](super_admin_overview.md) |
-| **Tenant portal** | PKI operators within one tenant | `https://<subdomain>.<domain>` | this guide's tenant chapters |
+| Portal | Audience | URL pattern |
+| ------ | -------- | ----------- |
+| **Tenant Super Admin** | Platform operators who provision tenants | `https://admin.<domain>` |
+| **Tenant portal** | PKI operators within one tenant | `https://<subdomain>.<domain>` |
 
-Each tenant is fully isolated (separate data, CAs, operators, branding) and is reached at its
-own subdomain. See [Tenant Super Admin & Multi-Tenancy](super_admin_overview.md) for the
-isolation model.
+> **Screenshots are illustrative.** Names shown (e.g. *Root CA 01*, *Sub CA 01*,
+> *CA Administrator*, *example.com*) reflect a sample environment and will differ in yours.
 
-## Accessing the Tenant Portal
+## Configuration Workflow
 
-- **URL:** your tenant subdomain, e.g. `https://qa.<domain>`.
-- **Supported browsers:** latest Chrome, Edge, Firefox, Safari.
-- Each tenant shows its own **branding** (logo, name, theme) on the sign-in screen.
+**Platform Setup (Super Admin)**
 
-## Login
+- [Sign in to the Super Admin Portal & Multi-Tenancy](01_super_admin_overview.md)
+- [Verify License & Modules](02_license.md)
+- [Create a Tenant](03_create_tenant.md)
+- [Manage Super Admins](04_super_admins.md)
 
-![Tenant Sign In](images/10_Tenant_Login.png)
+**Access the Tenant**
 
-1. Enter your **Username or Email** and **Password**.
-2. If your operator account has **SSO** or **Mutual TLS** enabled, complete that method instead.
-3. Click **Sign in**. On success you land on the [Dashboard](dashboard.md).
-4. A **Forgot your password?** link starts an email-based reset.
+- [Sign in to the Tenant](05_tenant_sign_in.md)
+- [Dashboard Overview](06_dashboard.md)
 
-The top bar offers a **theme toggle**, **language** selector, and the **account menu**
-(Profile, Logout). Your current **role** is shown next to your name (e.g. `system_owner`).
+**Access Control**
 
-## Navigation
+- [Roles & Permissions](07_roles.md)
+- [Operators](08_operators.md)
 
-The tenant sidebar groups all modules:
+**Cryptographic Foundation**
 
-| Section | Pages |
-| ------- | ----- |
-| [Dashboard](dashboard.md) | Metrics, trends, system health |
-| [Certificates](certificates.md) | Issued certificate inventory |
-| Certificate Requests | [Requests List](certificate_request_list.md), [Request Certificate](certificate_request_create.md) |
-| [Certificate Authorities](certificate_authorities.md) | CA hierarchy & configuration |
-| [Validation Authorities](validation_authorities.md) | OCSP responders, external CAs, sync |
-| [Certificate Profiles](certificate_profiles.md) | Issuance policy profiles |
-| [Crypto Sources](crypto_sources.md) | Key storage (HSM/PKCS#11/software) |
-| [Connectors](connectors.md) | Integrations (SIEM, SMTP, syslog, crypto engine) |
-| [Notifications](notifications.md) | Alert schedules |
-| [API Keys](key_management.md) | Programmatic access keys |
-| [Approvals](approvals.md) | Approval workflow queue |
-| [Templates](templates.md) | Certificate templates |
-| [Operators & Roles](users_roles.md) | Users, roles, permissions |
-| [Logs](audit.md) | Audit trail |
-| Settings | [General](settings_general.md), [Log Rotation](settings_logging.md), [Branding](settings_branding.md) |
-| [User Profile](profile.md) | Your account, MFA, permissions |
+- [Create Connectors](09_connectors.md)
+- [Configure Crypto Sources](10_crypto_sources.md)
 
-> Menu items are gated by your **permissions** and by the tenant's **license** (CA and/or VA
-> modules). Items you lack rights to, or that the license does not enable, are hidden.
+**Certificate Templates**
+
+- [Create Templates](11_templates.md)
+
+**Build the CA Hierarchy**
+
+- [Create the Root CA](12_create_root_ca.md)
+- [Create the Sub CA](13_create_sub_ca.md)
+- [Configure the CA (CRL, OCSP/AIA)](14_configure_ca.md)
+
+**Validation**
+
+- [Configure a Validation Authority (OCSP)](15_validation_authority.md)
+
+**Issuance**
+
+- [Create Certificate Profiles](16_certificate_profiles.md)
+- [Request & Issue a Certificate](17_request_certificate.md)
+- [Manage Certificates](18_certificates.md)
+
+**Operations & Governance**
+
+- [Approvals](19_approvals.md)
+- [Notifications](20_notifications.md)
+- [API Keys](21_api_keys.md)
+- [Logs](22_logs.md)
+
+**System Settings & Profile**
+
+- [General Settings](23_settings_general.md)
+- [Log Rotation & Signing](24_settings_log_rotation.md)
+- [Branding](25_settings_branding.md)
+- [User Profile & MFA](26_user_profile.md)
+
+## Dependency at a glance
+
+Connectors → Crypto Sources → Templates → Root CA → Sub CA → Validation Authority → Profiles →
+Request/Issue → Manage. Each step's page lists its **Prerequisites**.

@@ -1,76 +1,70 @@
 # Screenshot Inventory
 
-All screenshots captured during the live audit, stored in `docs/images/`.
+All screenshots, in configuration-flow order, stored in `docs/images/`. Names shown are
+illustrative (sample environment).
 
-## Tenant Super Admin portal
-
-| File | Screen |
-| ---- | ------ |
-| 01_Login.png | Super Admin sign-in |
-| 02_SuperAdmin_Tenants_List.png | Tenants list |
-| 03_SuperAdmin_Tenant_ActionsMenu.png | Tenant row actions (Suspend/Delete) |
-| 04_SuperAdmin_Create_Tenant.png | Create Tenant dialog |
-| 05_SuperAdmin_Tenant_Detail.png | Tenant Detail (General, Quotas, rate limit) |
-| 06_SuperAdmin_Administrators_List.png | Super Admins list |
-| 07_SuperAdmin_Administrator_ActionsMenu.png | Admin row actions (Delete) |
-| 08_SuperAdmin_Create_Administrator.png | Create Administrator dialog |
-| 09_SuperAdmin_License.png | License Management |
-
-## Tenant portal
-
-| File | Screen |
-| ---- | ------ |
-| 10_Tenant_Login.png | Tenant sign-in (branded) |
-| 11_Tenant_Dashboard_Overview.png | Dashboard – Overview |
-| 12_Tenant_Dashboard_RecentActivity.png | Dashboard – Recent Activity |
-| 13_Tenant_Dashboard_CAs.png | Dashboard – Certificate Authorities |
-| 14_Tenant_Dashboard_SystemHealth.png | Dashboard – System Health |
-| 15_Tenant_Certificates_List.png | Certificates list |
-| 16_Tenant_CertRequests_List.png | Requests List |
-| 17_Tenant_CertRequest_ViewDialog.png | Request Details dialog |
-| 18_Tenant_RequestCertificate_Step1.png | Request wizard – Step 1 (profiles) |
-| 19_Tenant_RequestCertificate_Form.png | Request wizard – full form |
-| 20_Tenant_RequestCertificate_GenerateKey.png | Request wizard – Generate Key + CSR |
-| 21_Tenant_CertificateAuthorities.png | CA page + list |
-| 22_Tenant_CA_KeyConfiguration.png | CA – Key Configuration |
-| 23_Tenant_CA_CertificateData.png | CA – Certificate Data |
-| 24_Tenant_CA_Directives.png | CA – Directives |
-| 25_Tenant_CA_CRLSettings.png | CA – CRL Settings |
-| 26_Tenant_CA_Distribution.png | CA – Distribution |
-| 27_Tenant_CA_CreateDialog.png | Create CA dialog |
-| 28_Tenant_VA_ValidationAuthorities.png | VA – Validation Authorities |
-| 29_Tenant_VA_ExternalCAs.png | VA – External CAs |
-| 30_Tenant_VA_SyncDiagnostics.png | VA – Sync Diagnostics |
-| 31_Tenant_VA_CreateDialog.png | Create VA dialog |
-| 32_Tenant_CertificateProfiles_List.png | Profiles list |
-| 33_Tenant_Profile_CreateDialog.png | Create Profile dialog |
-| 34_Tenant_CryptoSources_List.png | Crypto Sources list |
-| 35_Tenant_CryptoSource_AddDialog.png | Add Crypto Source dialog |
-| 36_Tenant_Connectors.png | Connectors – Configuration |
-| 37_Tenant_Connector_Monitoring.png | Connector – Monitoring |
-| 38_Tenant_Connector_Logs.png | Connector – Logs |
-| 39_Tenant_Connector_DLQ.png | Connector – DLQ |
-| 40_Tenant_Connector_AddDialog.png | Add Connector dialog |
-| 41_Tenant_Notifications_List.png | Notifications list |
-| 42_Tenant_Notification_CreateDialog.png | Create Notification dialog |
-| 43_Tenant_APIKeys_List.png | API Keys list |
-| 44_Tenant_APIKey_GenerateDialog.png | Generate API Key dialog |
-| 45_Tenant_Approvals_List.png | Approvals queue |
-| 46_Tenant_Templates_List.png | Templates list |
-| 47_Tenant_Template_CreateDialog.png | Create Template – General |
-| 48_Tenant_Template_Permissions.png | Create Template – Permissions |
-| 49_Tenant_Template_Extensions.png | Create Template – Extensions |
-| 50_Tenant_Template_ValidationData.png | Create Template – Validation Data |
-| 51_Tenant_Template_SubjectFields.png | Create Template – Subject Fields |
-| 52_Tenant_Template_SANConstraints.png | Create Template – SAN Constraints |
-| 53_Tenant_Operators_List.png | Operator Management |
-| 54_Tenant_Operator_CreateDialog.png | Create Operator dialog |
-| 55_Tenant_Roles_List.png | Roles & Permissions |
-| 56_Tenant_Role_CreateDialog.png | Create Role dialog |
-| 57_Tenant_Logs_Audit.png | Logs list |
-| 58_Tenant_Log_DetailDialog.png | Log detail dialog |
-| 59_Tenant_Settings_General.png | General Settings |
-| 60_Tenant_Settings_LogRotation.png | Log Rotation |
-| 61_Tenant_Settings_Branding.png | Branding |
-| 62_Tenant_Profile.png | User Profile |
-| 63_Tenant_Profile_EditDialog.png | Edit Profile dialog |
+| Step | File | Screen |
+| ---- | ---- | ------ |
+| 1 | 01_super_admin_sign_in.png | Super Admin sign-in |
+| 2 | 02_license_overview.png | License Management |
+| 3 | 03_tenants_list.png | Tenants list |
+| 3 | 03_tenant_actions_menu.png | Tenant row actions (Suspend/Delete) |
+| 3 | 03_create_tenant_dialog.png | Create Tenant dialog |
+| 3 | 03_tenant_detail.png | Tenant Detail (quotas, rate limit) |
+| 4 | 04_super_admins_list.png | Super Admins list |
+| 4 | 04_super_admin_actions_menu.png | Admin row actions (Delete) |
+| 4 | 04_create_super_admin_dialog.png | Create Administrator dialog |
+| 5 | 05_tenant_sign_in.png | Tenant sign-in |
+| 6 | 06_dashboard_overview.png | Dashboard – Overview |
+| 6 | 06_dashboard_recent_activity.png | Dashboard – Recent Activity |
+| 6 | 06_dashboard_certificate_authorities.png | Dashboard – Certificate Authorities |
+| 6 | 06_dashboard_system_health.png | Dashboard – System Health |
+| 7 | 07_roles_list.png | Roles & Permissions |
+| 7 | 07_create_role_dialog.png | Create Role dialog |
+| 8 | 08_operators_list.png | Operator Management |
+| 8 | 08_create_operator_dialog.png | Create Operator dialog |
+| 9 | 09_connectors_list.png | Connectors – Configuration |
+| 9 | 09_connector_monitoring.png | Connector – Monitoring |
+| 9 | 09_connector_logs.png | Connector – Logs |
+| 9 | 09_connector_dlq.png | Connector – DLQ |
+| 9 | 09_create_connector_dialog.png | Add Connector dialog |
+| 10 | 10_crypto_sources_list.png | Crypto Sources list |
+| 10 | 10_create_crypto_source_dialog.png | Add Crypto Source dialog |
+| 11 | 11_templates_list.png | Templates list |
+| 11 | 11_create_template_general.png | Create Template – General |
+| 11 | 11_create_template_permissions.png | Create Template – Permissions |
+| 11 | 11_create_template_extensions.png | Create Template – Extensions |
+| 11 | 11_create_template_validation_data.png | Create Template – Validation Data |
+| 11 | 11_create_template_subject_fields.png | Create Template – Subject Fields |
+| 11 | 11_create_template_san_constraints.png | Create Template – SAN Constraints |
+| 12 | 12_ca_list_overview.png | Certificate Authorities list |
+| 12/13 | 12_create_ca_dialog.png | Create CA dialog (Root/Sub) |
+| 14 | 14_ca_key_configuration.png | CA – Key Configuration |
+| 14 | 14_ca_certificate_data.png | CA – Certificate Data |
+| 14 | 14_ca_directives.png | CA – Directives |
+| 14 | 14_ca_crl_settings.png | CA – CRL Settings |
+| 14 | 14_ca_distribution.png | CA – Distribution |
+| 15 | 15_validation_authority_form.png | VA – Validation Authorities |
+| 15 | 15_external_cas.png | VA – External CAs |
+| 15 | 15_sync_diagnostics.png | VA – Sync Diagnostics |
+| 15 | 15_create_validation_authority_dialog.png | Create VA dialog |
+| 16 | 16_certificate_profiles_list.png | Certificate Profiles list |
+| 16 | 16_create_certificate_profile_dialog.png | Create Profile dialog |
+| 17 | 17_request_select_profile.png | Request wizard – select profile |
+| 17 | 17_request_form.png | Request wizard – form |
+| 17 | 17_request_generate_key.png | Request wizard – Generate Key + CSR |
+| 17 | 17_certificate_requests_list.png | Requests List |
+| 17 | 17_certificate_request_details.png | Request Details dialog |
+| 18 | 18_certificates_list.png | Certificates list |
+| 19 | 19_approvals_list.png | Approvals queue |
+| 20 | 20_notifications_list.png | Notifications list |
+| 20 | 20_create_notification_dialog.png | Create Notification dialog |
+| 21 | 21_api_keys_list.png | API Keys list |
+| 21 | 21_generate_api_key_dialog.png | Generate API Key dialog |
+| 22 | 22_logs_list.png | Logs list |
+| 22 | 22_log_detail_dialog.png | Log detail dialog |
+| 23 | 23_settings_general.png | General Settings |
+| 24 | 24_settings_log_rotation.png | Log Rotation |
+| 25 | 25_settings_branding.png | Branding |
+| 26 | 26_user_profile.png | User Profile |
+| 26 | 26_edit_profile_dialog.png | Edit Profile dialog |
