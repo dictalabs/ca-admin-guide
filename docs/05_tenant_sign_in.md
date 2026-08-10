@@ -1,15 +1,23 @@
 # Sign in to the Tenant
 
-> **Access the Tenant.** **Prerequisite:** the tenant has been [created](03_create_tenant.md).
+> **Access the Tenant.** **Prerequisite:** the platform is [installed](install.md) and you have a
+> tenant operator account.
 
 ## Purpose
 
-Everything from here on happens inside a single tenant. Sign in with a tenant operator account
-to begin configuring the PKI.
+Everything from here on happens inside a tenant. Sign in with a tenant operator account to begin
+configuring the PKI.
+
+!!! note "Default tenant vs. multiple tenants"
+    On a **single (default) tenant** deployment this is simply the portal you configure the PKI in —
+    no separate tenant needs to be created. If you run **multiple tenants**, each has its own
+    subdomain and must be [provisioned first](03_create_tenant.md); see
+    [About Multi-Tenancy](multi_tenancy.md).
 
 ## Navigation
 
-Open the tenant URL — `https://<subdomain>.<your-domain>` (e.g. `https://tenant.example.com`).
+Open the tenant URL — `https://<subdomain>.<your-domain>` (e.g. `https://tenant.example.com`). On a
+default-tenant deployment, use the tenant portal URL configured during [installation](install.md).
 
 ![Tenant sign-in](images/05_tenant_sign_in.png)
 
@@ -20,8 +28,8 @@ Open the tenant URL — `https://<subdomain>.<your-domain>` (e.g. `https://tenan
 | Username or Email | Operator login | Yes |
 | Password | Operator password | Yes |
 
-If the operator account has **SSO** or **Mutual TLS** enabled, complete that method instead of
-a password (see [Operators](08_operators.md)).
+Operator accounts sign in with a username/email and password (plus **MFA** if enabled on the
+account — see [User Profile & MFA](26_user_profile.md)).
 
 ## Step-by-Step
 

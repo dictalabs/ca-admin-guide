@@ -4,8 +4,22 @@
 
 ## Purpose
 
-Super Admins are system-level accounts that administer the CA service across **all** tenants.
-This page manages who holds that privileged access.
+Super Admins are **system-level accounts** that administer the Dictalabs CA service itself — not the
+PKI inside any one tenant. This page manages who holds that privileged access.
+
+**Scope & responsibilities.** A Super Admin operates the *control plane*: verifying the
+[license](02_license.md), provisioning and governing [tenants](multi_tenancy.md) (create, suspend,
+delete, adjust quotas), and managing other super-admin accounts. They authenticate against a global
+account store and are **not** bound to any tenant.
+
+**Separation from operators.** Super Admins are distinct from tenant **operators**, who work *inside*
+a single tenant (issuing certificates, managing CAs, etc.) with permissions granted through
+[roles](07_roles.md). A Super Admin does not automatically have operator access to a tenant's PKI,
+and an operator cannot administer the platform — keeping platform administration and PKI operations
+cleanly separated.
+
+**Least privilege.** Because these accounts can affect every tenant, grant the role sparingly and
+only to platform operators who genuinely need it.
 
 ## Navigation
 

@@ -1,80 +1,70 @@
-# CA Admin Guide
+# Introduction
 
-## Overview
+**Dictalabs CA** is a Certificate Authority platform for operating a private **Public Key
+Infrastructure (PKI)** — issuing, validating, and managing the full lifecycle of digital
+certificates from your own trusted roots. It runs on your infrastructure, is controlled entirely
+from a web console, and scales from a single team to many isolated customer workspaces.
 
-The **Certificate Authority (CA)** platform is a multi-tenant system for operating a private
-Public Key Infrastructure (PKI). This guide is organized as a **configuration workflow** — follow
-the steps in order to go from an empty system to issuing certificates.
+> **New here?** Read this page to understand what the platform does and how it is structured, then
+> go to [Install the Platform](install.md), and follow the
+> [Platform Setup → Overview & Workflow](platform_setup.md) roadmap to go from an empty system to
+> issuing certificates.
 
-The platform has **two portals**:
+## What it does
+
+Dictalabs CA lets a PKI operator:
+
+- Stand up a **CA hierarchy** — self-signed Root CAs and subordinate (intermediate) Sub CAs.
+- Issue and manage **end-entity certificates** for TLS/server auth, client auth, code signing,
+  and email — from a request wizard or CSR upload.
+- Publish **revocation** information via **CRLs** and an **OCSP** responder (Validation Authority).
+- Enforce issuance policy with **certificate templates** and **certificate profiles** (subject/SAN
+  rules, key constraints, extensions, EKUs, approval modes).
+- Protect signing keys in **software** key stores or **HSM / PKCS#11** crypto sources via
+  connectors.
+- Govern operations with **role-based access control**, **operators**, **approval workflows**,
+  **notifications**, **API keys**, and tamper-evident **logs** (optional log signing).
+
+## Key features
+
+| Area | Capabilities |
+| ---- | ------------ |
+| **CA hierarchy** | Root and Sub CAs, key ceremonies, CA configuration (keys, directives, CRL, distribution/AIA), revocation. |
+| **Issuance** | Certificate profiles & templates, request/CSR wizard, subject & SAN constraints, EKUs, approval modes. |
+| **Validation** | OCSP responder / Validation Authority, CRL generation & publishing, delta CRLs, distribution points. |
+| **Cryptography** | Software key stores and **HSM / PKCS#11** crypto sources; classical (RSA, ECDSA) and **post-quantum** algorithms (**ML-DSA**, **ML-KEM**). |
+| **Access control** | Roles & granular permissions, operators, **MFA**, approval (dual-control) workflows. |
+| **Operations** | Dashboard, notifications (SMTP), API keys, audit/access logs, log rotation & signing, SIEM/Syslog export. |
+| **Multi-tenancy** | Optional isolated tenant workspaces on one deployment (see [Multi-Tenancy & Tenants](multi_tenancy.md)). |
+
+## High-level architecture
+
+Dictalabs CA is a set of containerized services fronted by a web console. Two portals sit on top:
 
 | Portal | Audience | URL pattern |
 | ------ | -------- | ----------- |
-| **Tenant Super Admin** | Platform operators who provision tenants | `https://admin.<domain>` |
-| **Tenant portal** | PKI operators within one tenant | `https://<subdomain>.<domain>` |
+| **Tenant Super Admin** | Platform operators who provision and govern tenants | `https://admin.<domain>` |
+| **Tenant portal** | PKI operators working within one tenant | `https://<subdomain>.<domain>` |
 
-> **Screenshots are illustrative.** Names shown (e.g. *Root CA 01*, *Sub CA 01*,
-> *CA Administrator*, *example.com*) reflect a sample environment and will differ in yours.
+The backend services (see [Install the Platform](install.md) for details and ports):
 
-## Configuration Workflow
+- **CA API** — the core FastAPI service that issues and manages CAs, certificates, profiles, and
+  templates.
+- **OCSP responder** — the Validation Authority service that answers OCSP status requests.
+- **Background worker & scheduler** — generate/publish CRLs and run OCSP sync on a schedule.
+- **PostgreSQL** — system of record; **Redis** — task broker/cache.
+- **Web application** (frontend) — the admin console, deployed separately and pointed at the CA API.
 
-**Platform Setup (Super Admin)**
+Signing keys live in **crypto sources** — a software key store or an external **HSM / PKCS#11**
+device reached through a **connector**. Revocation is served two ways: **CRL** files published to a
+distribution point, and live **OCSP** responses from the Validation Authority.
 
-- [Sign in to the Super Admin Portal & Multi-Tenancy](01_super_admin_overview.md)
-- [Verify License & Modules](02_license.md)
-- [Create a Tenant](03_create_tenant.md)
-- [Manage Super Admins](04_super_admins.md)
+> **Screenshots are illustrative.** Names shown throughout this guide (e.g. *Root CA 01*,
+> *Sub CA 01*, *CA Administrator*, *example.com*) reflect a sample environment and will differ in
+> yours.
 
-**Access the Tenant**
+## Where to go next
 
-- [Sign in to the Tenant](05_tenant_sign_in.md)
-- [Dashboard Overview](06_dashboard.md)
-
-**Access Control**
-
-- [Roles & Permissions](07_roles.md)
-- [Operators](08_operators.md)
-
-**Cryptographic Foundation**
-
-- [Create Connectors](09_connectors.md)
-- [Configure Crypto Sources](10_crypto_sources.md)
-
-**Certificate Templates**
-
-- [Create Templates](11_templates.md)
-
-**Build the CA Hierarchy**
-
-- [Create the Root CA](12_create_root_ca.md)
-- [Create the Sub CA](13_create_sub_ca.md)
-- [Configure the CA (CRL, OCSP/AIA)](14_configure_ca.md)
-
-**Validation**
-
-- [Configure a Validation Authority (OCSP)](15_validation_authority.md)
-
-**Issuance**
-
-- [Create Certificate Profiles](16_certificate_profiles.md)
-- [Request & Issue a Certificate](17_request_certificate.md)
-- [Manage Certificates](18_certificates.md)
-
-**Operations & Governance**
-
-- [Approvals](19_approvals.md)
-- [Notifications](20_notifications.md)
-- [API Keys](21_api_keys.md)
-- [Logs](22_logs.md)
-
-**System Settings & Profile**
-
-- [General Settings](23_settings_general.md)
-- [Log Rotation & Signing](24_settings_log_rotation.md)
-- [Branding](25_settings_branding.md)
-- [User Profile & MFA](26_user_profile.md)
-
-## Dependency at a glance
-
-Connectors → Crypto Sources → Templates → Root CA → Sub CA → Validation Authority → Profiles →
-Request/Issue → Manage. Each step's page lists its **Prerequisites**.
+1. [Install the Platform](install.md) — deploy the services on your server.
+2. [Platform Setup → Overview & Workflow](platform_setup.md) — the ordered configuration roadmap.
+3. New to the terms used here? See the [Glossary & Abbreviations](glossary.md).

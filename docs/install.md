@@ -1,6 +1,16 @@
-# **CA Deployment Guide**
+# Install the Platform
 
-This guide walks through installing the **Certificate Authority (CA)** platform on an in-house server. The backend services and frontend run as Docker containers orchestrated by Docker Compose.
+This guide walks through installing **Dictalabs CA** on an in-house server. The backend services and
+frontend run as Docker containers orchestrated by Docker Compose.
+
+**What installation covers:** provisioning a host that meets the minimum requirements, installing
+Docker, setting up DNS, NGINX and TLS, configuring the backend environment and license, starting the
+services, and pointing the web console at the API. When you finish, sign in and continue with
+[Platform Setup → Overview & Workflow](platform_setup.md).
+
+**Before you begin:** a server you control (see requirements below), a domain you can create DNS
+records for, and a **license file from Dictalabs** (see step 7). For a refresher on what the platform
+is and how it's structured, see [Introduction](index.md).
 
 ---
 
@@ -177,7 +187,8 @@ docker compose up -d
 
 After deployment:
 
-- Access the **CA web app** at `https://ca.YOURDOMAIN.com` and sign in (see [Home → Login](index.md)).
+- Access the **CA web app** at `https://ca.YOURDOMAIN.com` and sign in (see
+  [Platform Setup → Overview & Workflow](platform_setup.md)).
 - Confirm the API health endpoint responds at `https://api.ca.YOURDOMAIN.com/health`.
 - Confirm the OCSP service responds at `https://ocsp.ca.YOURDOMAIN.com`.
 

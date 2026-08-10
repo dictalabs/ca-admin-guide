@@ -1,12 +1,24 @@
 # Create a Tenant
 
-> **Platform Setup.** **Prerequisite:** a valid [license](02_license.md) with the
-> required modules and multi-tenant mode enabled.
+> **Multi-Tenancy & Tenants (optional).** **Prerequisite:** a valid [license](02_license.md) with
+> **multi-tenant mode** enabled. New to tenants? Read [About Multi-Tenancy](multi_tenancy.md) first.
 
 ## Purpose
 
-Provision an isolated tenant workspace and its initial administrator. Every PKI configuration
-step that follows happens **inside** a tenant, so this is where real setup begins.
+Provision an isolated **tenant** workspace and its initial administrator. A tenant has its own CAs,
+certificates, operators, roles, branding, and logs, fully isolated from other tenants.
+
+**Why tenants exist:** to run PKI for multiple customers, business units, or trust domains from one
+deployment without any data or trust sharing between them. Each tenant is reached at its own
+subdomain and configured independently.
+
+**Benefits:** strong data isolation, per-workspace branding and access control, and independent
+quotas — while sharing a single installation to operate and patch.
+
+!!! note "Single (default) tenant?"
+    If you run **one** workspace you do **not** create tenants here — you configure the PKI directly
+    in the default tenant. This page applies only when **multi-tenant mode** is licensed and you need
+    additional isolated workspaces.
 
 ## Navigation
 

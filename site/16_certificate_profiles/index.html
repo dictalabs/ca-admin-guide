@@ -23,7 +23,7 @@
     
     
       
-        <title>Create Certificate Profiles - CA Admin Guide</title>
+        <title>Create Certificate Profiles - Dictalabs CA Admin Guide</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="CA Admin Guide" class="md-header__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+    <a href=".." title="Dictalabs CA Admin Guide" class="md-header__button md-logo" aria-label="Dictalabs CA Admin Guide" data-md-component="logo">
       
   <img src="../images/logo.png" alt="logo">
 
@@ -95,7 +95,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CA Admin Guide
+            Dictalabs CA Admin Guide
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -179,12 +179,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="CA Admin Guide" class="md-nav__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+    <a href=".." title="Dictalabs CA Admin Guide" class="md-nav__button md-logo" aria-label="Dictalabs CA Admin Guide" data-md-component="logo">
       
   <img src="../images/logo.png" alt="logo">
 
     </a>
-    CA Admin Guide
+    Dictalabs CA Admin Guide
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -203,7 +203,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Introduction
   
 
     
@@ -297,6 +297,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../platform_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview & Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../01_super_admin_overview/" class="md-nav__link">
         
   
@@ -304,7 +332,7 @@
   <span class="md-ellipsis">
     
   
-    Sign in & Multi-Tenancy
+    Sign in to the Super Admin Portal
   
 
     
@@ -333,34 +361,6 @@
     
   
     Verify License & Modules
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_create_tenant/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Create a Tenant
   
 
     
@@ -1201,6 +1201,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fields-edit-profile-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields — Edit Profile dialog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-profile-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Profile dialog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Profile dialog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificate-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subject-san" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subject &amp; SAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policies-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policies &amp; settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1615,6 +1687,198 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Tenancy & Tenants (optional)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multi-Tenancy & Tenants (optional)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multi_tenancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Multi-Tenancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_create_tenant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create a Tenant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary & Abbreviations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1686,6 +1950,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fields-edit-profile-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields — Edit Profile dialog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-profile-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Profile dialog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Profile dialog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificate-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subject-san" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subject &amp; SAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policies-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policies &amp; settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1733,51 +2069,273 @@ issuance policy.</p>
 </ul>
 <h2 id="fields-create-profile-dialog">Fields — Create Profile dialog</h2>
 <p><img alt="Create Profile" src="../images/16_create_certificate_profile_dialog.png" /></p>
+<p>Create a new profile by choosing one certificate template and configuring its approval workflow.
+Fields marked required must be filled before the <strong>Create profile</strong> button enables.</p>
 <table>
 <thead>
 <tr>
 <th>Field</th>
-<th>Description</th>
-<th>Required</th>
-<th>Notes</th>
+<th>What to enter</th>
+<th>Why it matters</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Profile Name</td>
-<td>Display name</td>
-<td>Yes</td>
-<td>—</td>
+<td>Profile name</td>
+<td>A clear, human-readable name (e.g. "Web server - standard TLS"). Required.</td>
+<td>This is the label requesters pick from when requesting a certificate, so make it descriptive of the use case.</td>
 </tr>
 <tr>
-<td>Certificate Type</td>
-<td>e.g. Server Auth / Code Signing</td>
-<td>Yes</td>
-<td>—</td>
+<td>Certificate type</td>
+<td>Pick one of <strong>Server auth</strong>, <strong>Client auth</strong>, <strong>Code signing</strong>, or <strong>Email</strong>. Required.</td>
+<td>A free-form classification label used for filtering and display. The actual EKU/key usages come from the linked template, not from this field. (The former <strong>SSL/TLS</strong> option was removed; use <strong>Server auth</strong> instead.)</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Purpose</td>
-<td>No</td>
-<td>—</td>
+<td>Optional free text describing the purpose and use case of the profile.</td>
+<td>Helps other admins understand when this profile should be used; shown on the profile card and details.</td>
 </tr>
 <tr>
 <td>Issuing CA</td>
-<td>CA that signs certificates from this profile</td>
-<td>Yes</td>
-<td>Your <a href="../13_create_sub_ca/">Sub CA</a></td>
+<td>Select the <a href="../13_create_sub_ca/">Sub CA</a> that will sign certificates issued from this profile. Required.</td>
+<td>Only <strong>active intermediate</strong> CAs are listed. This binds every certificate from this profile to a specific issuer and its trust chain.</td>
 </tr>
 <tr>
-<td>Approval Mode</td>
-<td>Auto / Manual</td>
-<td>No</td>
-<td>Manual → routes to <a href="../19_approvals/">Approvals</a></td>
+<td>Approval mode</td>
+<td>Choose <strong>Auto</strong> or <strong>Manual</strong>.</td>
+<td><strong>Auto</strong> issues immediately on request; <strong>Manual</strong> routes each request to <a href="../19_approvals/">Approvals</a> for a reviewer. Governs whether issuance needs a human check.</td>
 </tr>
 <tr>
-<td>Certificate Template</td>
-<td>The single template defining key usages/extensions</td>
-<td>Yes</td>
-<td>From <a href="../11_templates/">Templates</a></td>
+<td>Certificate template</td>
+<td>Select one <strong>end-entity</strong> certificate template. Required.</td>
+<td>All key usages, extended key usages, and extensions are inherited from this template. Changing the certificate type resets this selection, so pick the type first.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Create profile / Cancel</strong> — Create validates the required fields and saves the profile; Cancel discards it.</li>
+</ul>
+<h2 id="fields-edit-profile-dialog">Fields — Edit Profile dialog</h2>
+<p>Edit reopens the same fields as Create for an existing profile, pre-filled from its current values,
+plus one extra control.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Profile name</td>
+<td>Update the display name. Required.</td>
+<td>Same role as at creation.</td>
+</tr>
+<tr>
+<td>Certificate type</td>
+<td>Reselect from <strong>Server auth / Client auth / Code signing / Email</strong>. Required.</td>
+<td>Reclassifies the profile for filtering/display.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Update the free-text description.</td>
+<td>Keeps the profile's stated purpose current.</td>
+</tr>
+<tr>
+<td>Issuing CA</td>
+<td>Reselect the intermediate issuing CA. Required.</td>
+<td>Repoints future issuance at a different Sub CA and trust chain.</td>
+</tr>
+<tr>
+<td>Approval mode</td>
+<td><strong>Auto</strong> or <strong>Manual</strong>.</td>
+<td>Switches new requests between immediate issuance and routing to <a href="../19_approvals/">Approvals</a>.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td><strong>Active</strong> or <strong>Inactive</strong>.</td>
+<td>Inactive profiles remain configured but cannot be selected for new certificate requests — use this to retire a profile without deleting it.</td>
+</tr>
+<tr>
+<td>Certificate template</td>
+<td>Reselect one end-entity template. Required.</td>
+<td>Re-derives all key usages and extensions from the newly chosen template.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Edit profile / Cancel</strong> — Edit saves changes; Cancel discards them.</li>
+</ul>
+<h2 id="configure-profile-dialog">Configure Profile dialog</h2>
+<p>Opened from <strong>Configure profile</strong> on a profile card. It manages the certificate template, subject
+and SAN override rules, the approval workflow, and issuance policies across four tabs. Save with
+<strong>Save configuration</strong>; <strong>Cancel</strong> discards.</p>
+<h3 id="certificate-template">Certificate template</h3>
+<p>Read-only view of the template bound to the profile and everything inherited from it. To change any
+of these values you must select a different template (or create a new one).</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Template name</td>
+<td>Read-only.</td>
+<td>Identifies which template drives this profile's certificate contents.</td>
+</tr>
+<tr>
+<td>Template type</td>
+<td>Read-only.</td>
+<td>Confirms the template category (e.g. end-entity) in use.</td>
+</tr>
+<tr>
+<td>Key usages (from template)</td>
+<td>Read-only list.</td>
+<td>Shows the basic key usages every issued certificate will carry, so you can verify they fit the intended use.</td>
+</tr>
+<tr>
+<td>Extended key usages (from template)</td>
+<td>Read-only list.</td>
+<td>Shows the EKUs (e.g. server/client auth) that actually determine what the certificate is trusted for.</td>
+</tr>
+<tr>
+<td>Certificate extensions (from template)</td>
+<td>Read-only list.</td>
+<td>Lets you confirm which X.509 extensions the template applies before issuing under this profile.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The tab shows a reminder that all of the above are inherited from the template and can only be changed by switching templates.</li>
+</ul>
+<h3 id="subject-san">Subject &amp; SAN</h3>
+<p>Defines default subject/SAN values and how much a requester may override them at request time,
+using four permission levels: <strong>Locked</strong> (no overrides), <strong>Restricted</strong> (admin approval required),
+<strong>Flexible</strong> (some fields user-editable), and <strong>Open</strong> (most fields user-editable).</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default subject template</td>
+<td>The DN to pre-fill, e.g. <code>CN=example.com, O=Company, L=City, ST=State, C=Country</code>. Variables such as <code>${user.name}</code>, <code>${domain}</code>, <code>${department}</code> are supported.</td>
+<td>Standardizes the subject DN across issued certificates and reduces requester error.</td>
+</tr>
+<tr>
+<td>Subject override policy — Permission level</td>
+<td>Choose <strong>Locked / Restricted / Flexible / Open</strong>.</td>
+<td>Controls whether and how requesters may change the subject DN. Tighter levels enforce naming policy; looser levels give requesters flexibility. The current policy text summarizes the selected level.</td>
+</tr>
+<tr>
+<td>SAN default entries</td>
+<td>Review the default SAN values configured for the profile (shows "No default SAN entries configured" when none).</td>
+<td>Pre-populated SANs that will be applied unless overridden.</td>
+</tr>
+<tr>
+<td>Max entries</td>
+<td>Read-only count of the maximum SAN entries allowed.</td>
+<td>Caps how many SAN values a certificate may include, limiting scope.</td>
+</tr>
+<tr>
+<td>SAN override policy — Permission level</td>
+<td>Choose <strong>Locked / Restricted / Flexible / Open</strong>.</td>
+<td>Controls whether requesters may add or change SAN entries, balancing policy enforcement against convenience.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="approval-workflow">Approval workflow</h3>
+<p>Sets how certificate requests from this profile are approved and whether the profile is active.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approval mode</td>
+<td>Choose <strong>Automatic approval</strong>, <strong>Manual approval</strong>, <strong>Conditional approval</strong>, or <strong>Dual approval required</strong>.</td>
+<td>Determines the review path: automatic issues immediately; manual and dual send requests to <a href="../19_approvals/">Approvals</a>; dual requires a second approver. Controls the strength of the issuance control.</td>
+</tr>
+<tr>
+<td>Workflow status</td>
+<td>Set <strong>Active</strong> or <strong>Inactive</strong>.</td>
+<td>Inactive profiles can't be used for new requests, letting you pause a profile without deleting it.</td>
+</tr>
+<tr>
+<td>Auto-approval rules</td>
+<td>Read-only list (shown when configured).</td>
+<td>Displays the conditions under which requests are auto-approved, for transparency.</td>
+</tr>
+<tr>
+<td>Manual approvers</td>
+<td>Read-only list (shown when configured).</td>
+<td>Shows who is authorized to approve requests routed for manual review.</td>
+</tr>
+<tr>
+<td>Required approvals</td>
+<td>Read-only count.</td>
+<td>Indicates how many approvals a request needs before issuance.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="policies-settings">Policies &amp; settings</h3>
+<p>Certificate validity, issuance controls, and cryptographic constraints for the profile.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Validity period</td>
+<td>Choose <strong>90</strong>, <strong>180</strong>, <strong>365</strong>, <strong>730 (2 years)</strong>, or <strong>1095 days (3 years)</strong>.</td>
+<td>Sets the lifetime of certificates issued from this profile; shorter lifetimes reduce exposure if a key is compromised.</td>
+</tr>
+<tr>
+<td>Auto-renewal notification</td>
+<td>Toggle on/off.</td>
+<td>When on, requesters are reminded before certificates expire, reducing unplanned outages.</td>
+</tr>
+<tr>
+<td>Require CSR validation</td>
+<td>Toggle on/off.</td>
+<td>When on, submitted CSRs are validated before issuance, preventing malformed or non-compliant requests.</td>
+</tr>
+<tr>
+<td>Domain ownership verification</td>
+<td>Toggle on/off.</td>
+<td>When on, the requester must prove control of the domain, preventing issuance for domains they don't own.</td>
+</tr>
+<tr>
+<td>CT log submission</td>
+<td>Toggle on/off.</td>
+<td>When on, issued certificates are submitted to Certificate Transparency logs for public auditability.</td>
+</tr>
+<tr>
+<td>Max SAN entries</td>
+<td>Enter a number (default 10).</td>
+<td>Hard limit on SAN entries per certificate, constraining certificate scope.</td>
+</tr>
+<tr>
+<td>Minimum key size</td>
+<td>Choose <strong>2048</strong>, <strong>3072</strong>, or <strong>4096</strong> bits.</td>
+<td>Enforces a minimum RSA key strength; higher values increase security at some performance cost.</td>
 </tr>
 </tbody>
 </table>
@@ -1824,7 +2382,7 @@ issuance policy.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      © 2025 Dictalabs. All rights reserved.
+      © 2026 Dictalabs. All rights reserved.
     </div>
   
   

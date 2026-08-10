@@ -1,4 +1,4 @@
-site_name: CA Admin Guide
+site_name: Dictalabs CA Admin Guide
 theme:
   name: material
   theme_dir: docs/custom_theme
@@ -22,14 +22,15 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
-# Navigation — ordered by configuration workflow
+# Navigation — About → Install → Platform Setup → configuration workflow.
+# Multi-tenancy/tenant content is isolated in its own optional section near the end.
 nav:
-  - Home: index.md
+  - Introduction: index.md
   - Install the Platform: install.md
   - "Platform Setup":
-    - "Sign in & Multi-Tenancy": 01_super_admin_overview.md
+    - "Overview & Workflow": platform_setup.md
+    - "Sign in to the Super Admin Portal": 01_super_admin_overview.md
     - "Verify License & Modules": 02_license.md
-    - "Create a Tenant": 03_create_tenant.md
     - "Manage Super Admins": 04_super_admins.md
   - "Access the Tenant":
     - "Sign in to the Tenant": 05_tenant_sign_in.md
@@ -62,3 +63,8 @@ nav:
     - "Log Rotation & Signing": 24_settings_log_rotation.md
     - "Branding": 25_settings_branding.md
     - "User Profile & MFA": 26_user_profile.md
+  - "Multi-Tenancy & Tenants (optional)":
+    - "About Multi-Tenancy": multi_tenancy.md
+    - "Create a Tenant": 03_create_tenant.md
+  - "Reference":
+    - "Glossary & Abbreviations": glossary.md
