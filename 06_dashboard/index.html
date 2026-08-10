@@ -20,7 +20,7 @@
     
     
       
-        <title>Dashboard Overview - CA Admin Guide</title>
+        <title>Dashboard Overview - Dictalabs CA Admin Guide</title>
       
     
     
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="CA Admin Guide" class="md-header__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+    <a href=".." title="Dictalabs CA Admin Guide" class="md-header__button md-logo" aria-label="Dictalabs CA Admin Guide" data-md-component="logo">
       
   <img src="../images/logo.png" alt="logo">
 
@@ -93,7 +93,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CA Admin Guide
+            Dictalabs CA Admin Guide
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -174,12 +174,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="CA Admin Guide" class="md-nav__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+    <a href=".." title="Dictalabs CA Admin Guide" class="md-nav__button md-logo" aria-label="Dictalabs CA Admin Guide" data-md-component="logo">
       
   <img src="../images/logo.png" alt="logo">
 
     </a>
-    CA Admin Guide
+    Dictalabs CA Admin Guide
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -195,7 +195,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Introduction
   </span>
   
 
@@ -266,11 +266,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../platform_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview & Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../01_super_admin_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sign in & Multi-Tenancy
+    Sign in to the Super Admin Portal
   </span>
   
 
@@ -292,27 +313,6 @@
   
   <span class="md-ellipsis">
     Verify License & Modules
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_create_tenant/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Create a Tenant
   </span>
   
 
@@ -479,6 +479,49 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-alerts-banner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical alerts banner
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stat cards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
@@ -486,11 +529,43 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#recent-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recent activity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-authorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate authorities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      System health
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Actions
+      Notes
     </span>
   </a>
   
@@ -1268,6 +1343,153 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Multi-Tenancy & Tenants (optional)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Multi-Tenancy & Tenants (optional)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multi_tenancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Multi-Tenancy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_create_tenant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a Tenant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary & Abbreviations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1313,6 +1535,49 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-alerts-banner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical alerts banner
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stat cards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
@@ -1320,11 +1585,43 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#recent-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recent activity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-authorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate authorities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      System health
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Actions
+      Notes
     </span>
   </a>
   
@@ -1354,50 +1651,223 @@
 system health before you start configuring.</p>
 <h2 id="navigation">Navigation</h2>
 <p><code>Dashboard</code> — the default page after login.</p>
-<h2 id="overview">Overview</h2>
+<h2 id="layout">Layout</h2>
 <p><img alt="Dashboard – Overview" src="../images/06_dashboard_overview.png" /></p>
-<ul>
-<li><strong>Critical Alerts</strong> banner (severity-tagged issues).</li>
-<li><strong>Stat cards</strong> — Active Certificates, Pending Requests, CA Coverage, Monthly Issuance.</li>
-<li>Four <strong>tabs</strong>:</li>
-</ul>
+<p>Every view shares two fixed elements at the top of the page, followed by four tabs. All figures are
+tenant-scoped and refresh whenever the page is loaded.</p>
+<h3 id="critical-alerts-banner">Critical alerts banner</h3>
+<p>Shown only when the tenant has open critical issues; a healthy tenant hides the banner entirely.</p>
 <table>
 <thead>
 <tr>
-<th>Tab</th>
-<th>Contents</th>
+<th>Widget / metric</th>
+<th>What it shows</th>
+<th>How to read it</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Overview</td>
-<td>Issuance trend, distribution by type, system performance, Quick Actions</td>
+<td>Alert row</td>
+<td>A short message for each active issue (for example an expiring root CA, HSM connectivity problems, or a scheduled CRL update).</td>
+<td>Each row is one condition that needs attention.</td>
 </tr>
 <tr>
-<td>Recent Activity</td>
-<td>Recent system actions</td>
+<td>Severity badge</td>
+<td>Priority of the alert — <strong>Critical</strong>, <strong>High</strong>, or <strong>Info</strong>.</td>
+<td>Critical (red) needs action now; High is important but not immediate; Info is advisory. Work top severities first.</td>
 </tr>
 <tr>
-<td>Certificate Authorities</td>
-<td>CA hierarchy / status</td>
-</tr>
-<tr>
-<td>System Health</td>
-<td>Connector health, performance</td>
+<td>Time</td>
+<td>How long ago the alert was raised (for example "5 min ago").</td>
+<td>Recent, repeating alerts point to an active/ongoing problem.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Recent Activity</strong></p>
-<p><img alt="Dashboard – Recent Activity" src="../images/06_dashboard_recent_activity.png" /></p>
-<p><strong>Certificate Authorities</strong></p>
-<p><img alt="Dashboard – Certificate Authorities" src="../images/06_dashboard_certificate_authorities.png" /></p>
-<p><strong>System Health</strong></p>
-<p><img alt="Dashboard – System Health" src="../images/06_dashboard_system_health.png" /></p>
-<h2 id="actions">Actions</h2>
+<h3 id="stat-cards">Stat cards</h3>
+<p>A row of four summary cards with a small trend sparkline under each value. The percentage under the
+value is the change versus the prior period; its colour reflects status (green positive, amber
+warning, red negative).</p>
+<table>
+<thead>
+<tr>
+<th>Widget / metric</th>
+<th>What it shows</th>
+<th>How to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active certificates</td>
+<td>Count of currently valid, issued certificates.</td>
+<td>Your live certificate footprint. A sharp drop can indicate mass expiry or revocation.</td>
+</tr>
+<tr>
+<td>Pending requests</td>
+<td>Certificate requests awaiting approval or action.</td>
+<td>A growing number means requests are queuing — review them under Certificate Requests.</td>
+</tr>
+<tr>
+<td>CA coverage (Active/Total)</td>
+<td>Active certificate authorities against the total configured.</td>
+<td>Active should equal total; a gap means one or more CAs are inactive, revoked, or suspended.</td>
+</tr>
+<tr>
+<td>Monthly issuance</td>
+<td>Certificates issued in the current month.</td>
+<td>Tracks issuance volume; compare the change percentage against expected demand.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tabs">Tabs</h2>
+<h3 id="overview">Overview</h3>
+<p>Operational snapshot combining issuance trends, certificate mix, live system load, and shortcuts
+into common workflows.</p>
+<table>
+<thead>
+<tr>
+<th>Widget / metric</th>
+<th>What it shows</th>
+<th>How to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Certificate issuance trend</td>
+<td>Line chart of monthly <strong>Certificates issued</strong> (blue) and <strong>Revocations</strong> (red) over the reporting range.</td>
+<td>Rising issuance with flat revocations is healthy growth; a revocation spike warrants investigation.</td>
+</tr>
+<tr>
+<td>Certificate distribution</td>
+<td>Donut chart of certificates broken down by certificate type, with a colour-coded legend.</td>
+<td>Shows where certificates are concentrated by type. Reads "No certificate distribution data" when the tenant has none.</td>
+</tr>
+<tr>
+<td>System performance</td>
+<td>Area chart of <strong>CPU %</strong>, <strong>Memory %</strong>, and <strong>HSM %</strong> utilization over time.</td>
+<td>Watch for sustained high utilization or upward trends that signal capacity pressure. Click a legend entry to hide/show that series. CPU utilization now reports a real value (earlier it showed 0).</td>
+</tr>
+<tr>
+<td>Quick actions</td>
+<td>Buttons linking to common certificate authority operations.</td>
+<td>Shortcut launchpad — see the list below.</td>
+</tr>
+</tbody>
+</table>
+<p>Actions:</p>
 <ul>
-<li>Switch tabs; use <strong>Quick Actions</strong> (Issue Certificate, Create Template, Configure CA, Review
-  Requests) to jump into workflows.</li>
+<li><strong>Issue new certificate</strong> → opens the certificate request form.</li>
+<li><strong>Create template</strong> → opens certificate templates.</li>
+<li><strong>Configure certificate authority</strong> → opens the CA certificate-data configuration.</li>
+<li><strong>Review requests</strong> → opens the certificate requests queue.</li>
 </ul>
+<h3 id="recent-activity">Recent activity</h3>
+<p><img alt="Dashboard – Recent Activity" src="../images/06_dashboard_recent_activity.png" /></p>
+<p>Chronological feed of the latest certificate operations and system events for the tenant.</p>
+<table>
+<thead>
+<tr>
+<th>Widget / metric</th>
+<th>What it shows</th>
+<th>How to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status dot</td>
+<td>Colour-coded outcome of each event — green completed, yellow pending, red failed.</td>
+<td>Scan for red or yellow dots to spot failed or in-progress operations.</td>
+</tr>
+<tr>
+<td>Action / subject</td>
+<td>The operation performed and the object it acted on (for example the certificate or CA).</td>
+<td>Identifies what happened and to what.</td>
+</tr>
+<tr>
+<td>User</td>
+<td>The account that performed the action.</td>
+<td>Attributes the event for audit and follow-up.</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>How long ago the event occurred.</td>
+<td>Orders the feed newest-first; recent clusters indicate active work.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="certificate-authorities">Certificate authorities</h3>
+<p><img alt="Dashboard – Certificate Authorities" src="../images/06_dashboard_certificate_authorities.png" /></p>
+<p>Read-only view of the tenant's CA hierarchy, showing each authority's role, validity, and status.</p>
+<table>
+<thead>
+<tr>
+<th>Widget / metric</th>
+<th>What it shows</th>
+<th>How to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CA node</td>
+<td>Each authority by name, indented to show parent/child nesting.</td>
+<td>Root CAs sit at the top level; intermediates are indented beneath their issuer.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Whether the node is a <strong>Root certificate authority</strong> or an <strong>Intermediate certificate authority</strong>.</td>
+<td>Confirms the trust role of each CA in the chain.</td>
+</tr>
+<tr>
+<td>Valid until</td>
+<td>The CA certificate's expiry date.</td>
+<td>Plan renewal/rotation before this date; an approaching root expiry also surfaces in Critical alerts.</td>
+</tr>
+<tr>
+<td>Status badge</td>
+<td>Lifecycle state — <strong>Active</strong>, <strong>Inactive</strong>, <strong>Revoked</strong>, or <strong>Suspended</strong>.</td>
+<td>Only Active CAs can issue; any other state on an expected-active CA needs attention. Reads "No certificate authorities available." when none exist.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="system-health">System health</h3>
+<p><img alt="Dashboard – System Health" src="../images/06_dashboard_system_health.png" /></p>
+<p>Health of external integrations plus key service-level performance indicators.</p>
+<table>
+<thead>
+<tr>
+<th>Widget / metric</th>
+<th>What it shows</th>
+<th>How to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connector health</td>
+<td>Status of each external integration (for example HSM module, email connector) as <strong>Healthy</strong>, <strong>Warning</strong>, or <strong>Down</strong>.</td>
+<td>Green healthy, amber warning, red down. Any non-healthy connector can block issuance or notifications. Reads "No health checks available." when nothing is configured.</td>
+</tr>
+<tr>
+<td>Avg. issuance time</td>
+<td>Average time to issue a certificate, in seconds.</td>
+<td>Rising values suggest CA or HSM load; compare against your baseline.</td>
+</tr>
+<tr>
+<td>CRL update time</td>
+<td>Time taken for the last CRL update, in seconds.</td>
+<td>Longer times can delay revocation propagation.</td>
+</tr>
+<tr>
+<td>OCSP response time</td>
+<td>Latency of OCSP responses, in milliseconds.</td>
+<td>Low, stable latency keeps validation fast for relying parties.</td>
+</tr>
+<tr>
+<td>System uptime</td>
+<td>How long the service has been running (days/hours/minutes).</td>
+<td>A recently reset uptime indicates a restart or outage.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes">Notes</h2>
 <div class="admonition note">
 <p class="admonition-title">Important Notes</p>
 <ul>

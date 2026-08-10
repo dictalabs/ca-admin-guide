@@ -20,7 +20,7 @@
     
     
       
-        <title>Create Connectors - CA Admin Guide</title>
+        <title>Create Connectors - Dictalabs CA Admin Guide</title>
       
     
     
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="CA Admin Guide" class="md-header__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+    <a href=".." title="Dictalabs CA Admin Guide" class="md-header__button md-logo" aria-label="Dictalabs CA Admin Guide" data-md-component="logo">
       
   <img src="../images/logo.png" alt="logo">
 
@@ -93,7 +93,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CA Admin Guide
+            Dictalabs CA Admin Guide
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -174,12 +174,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="CA Admin Guide" class="md-nav__button md-logo" aria-label="CA Admin Guide" data-md-component="logo">
+    <a href=".." title="Dictalabs CA Admin Guide" class="md-nav__button md-logo" aria-label="Dictalabs CA Admin Guide" data-md-component="logo">
       
   <img src="../images/logo.png" alt="logo">
 
     </a>
-    CA Admin Guide
+    Dictalabs CA Admin Guide
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -195,7 +195,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Introduction
   </span>
   
 
@@ -266,11 +266,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../platform_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview & Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../01_super_admin_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sign in & Multi-Tenancy
+    Sign in to the Super Admin Portal
   </span>
   
 
@@ -292,27 +313,6 @@
   
   <span class="md-ellipsis">
     Verify License & Modules
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_create_tenant/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Create a Tenant
   </span>
   
 
@@ -632,13 +632,91 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#detail-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       Detail tabs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detail tabs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crypto-engine-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crypto Engine settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-smtp-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email (SMTP) settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syslog-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syslog settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siem-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      SIEM settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlq" class="md-nav__link">
+    <span class="md-ellipsis">
+      DLQ
     </span>
   </a>
   
@@ -1292,6 +1370,153 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Multi-Tenancy & Tenants (optional)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Multi-Tenancy & Tenants (optional)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multi_tenancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Multi-Tenancy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_create_tenant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a Tenant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary & Abbreviations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1343,13 +1568,91 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#detail-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       Detail tabs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detail tabs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crypto-engine-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crypto Engine settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-smtp-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email (SMTP) settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syslog-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syslog settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siem-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      SIEM settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlq" class="md-nav__link">
+    <span class="md-ellipsis">
+      DLQ
     </span>
   </a>
   
@@ -1412,39 +1715,267 @@ export.</p>
   a <strong>Default</strong> marker, and Active/Inactive status; each has a <strong>Delete</strong> control.</li>
 <li><strong>Right panel:</strong> selected connector with tabs.</li>
 </ul>
-<h3 id="detail-tabs">Detail tabs</h3>
+<h2 id="detail-tabs">Detail tabs</h2>
+<p>Selecting a connector opens its detail panel. The tabs available depend on the
+connector type: <strong>Configuration</strong>, <strong>Monitoring</strong>, and <strong>Logs</strong> appear for every
+connector, while <strong>DLQ</strong> appears only for <strong>SIEM</strong> (SIEM push) connectors.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Edit the selected connector's identity and its type-specific connection
+settings, then save or test the connection. These fields are shared by every
+connector type and appear at the top of the tab.</p>
 <table>
 <thead>
 <tr>
-<th>Tab</th>
-<th>Contents</th>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Configuration</td>
-<td>Type-specific connection settings</td>
+<td>Name</td>
+<td>A clear display name for the connector.</td>
+<td>Identifies the connector in the list and in pickers elsewhere (crypto sources, notifications). Saving is blocked until it is filled.</td>
 </tr>
 <tr>
-<td>Monitoring</td>
-<td>Health/status</td>
+<td>Status</td>
+<td>Active or Inactive.</td>
+<td>Only Active connectors are used by the platform; set Inactive to keep the definition but stop it being used.</td>
 </tr>
 <tr>
-<td>Logs</td>
-<td>Activity log</td>
+<td>Description</td>
+<td>Optional note on the connector's purpose or scope.</td>
+<td>Helps other admins understand what the connector is for; not functional.</td>
 </tr>
 <tr>
-<td>DLQ</td>
-<td>Dead-letter queue (e.g. failed SIEM pushes)</td>
+<td>Default</td>
+<td>On to mark this the default connector for its type.</td>
+<td>The default is used when a feature needs a connector of that type and none is explicitly chosen (e.g. the default Crypto Engine or SMTP).</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Monitoring</strong></p>
+<p>Below the shared fields, the tab shows the connection settings for the
+connector's type (documented per type in the following subsections).</p>
+<ul>
+<li><strong>Test connection</strong> — sends the current settings to the server to verify they work before saving. Shown for Crypto Engine, Email (SMTP), Syslog, and SIEM connectors. Stored secrets are reused, so you need not re-enter a password just to test.</li>
+<li><strong>Save changes</strong> — persists the edits. Disabled until the name and all required fields are valid (and, for Syslog, at least one stream is selected).</li>
+</ul>
+<h4 id="crypto-engine-settings">Crypto Engine settings</h4>
+<p>Connection to the external crypto engine / HSM that stores key material.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engine URL</td>
+<td>The engine endpoint or HSM library path (e.g. <code>/usr/lib/softhsm/libsofthsm2.so</code>). Required.</td>
+<td>Tells the platform where to reach the key store; wrong values break all key operations that depend on this engine.</td>
+</tr>
+<tr>
+<td>Client ID</td>
+<td>The client identifier issued by the crypto engine. Required.</td>
+<td>Identifies this CA to the engine for authentication.</td>
+</tr>
+<tr>
+<td>Client secret</td>
+<td>The secret paired with the Client ID. Required.</td>
+<td>Authenticates the CA to the engine; stored encrypted and shown as a masked placeholder once saved.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="email-smtp-settings">Email (SMTP) settings</h4>
+<p>Outbound mail server used for certificate and system notifications.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMTP server</td>
+<td>Hostname of the mail server (e.g. <code>smtp.acme.com</code>). Required.</td>
+<td>Destination host for outbound mail; must be reachable from the CA.</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>SMTP port (e.g. <code>587</code> for STARTTLS, <code>465</code> for SSL/TLS, <code>25</code> for plain). Required.</td>
+<td>Must match the server's listening port and the chosen transport security.</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>The SMTP account username. Required.</td>
+<td>Used to authenticate to the mail server.</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>The SMTP account password. Required.</td>
+<td>Authenticates the account; stored encrypted and masked after saving.</td>
+</tr>
+<tr>
+<td>Enable TLS</td>
+<td>On to use STARTTLS for the connection.</td>
+<td>Encrypts the SMTP session so credentials and mail are not sent in clear text.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="syslog-settings">Syslog settings</h4>
+<p>Forwards platform logs to a remote syslog server, with selectable log streams.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server URL</td>
+<td>Hostname or URL of the syslog server (e.g. <code>https://syslog.example.com</code>). Required.</td>
+<td>Destination the logs are sent to.</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>Syslog port (e.g. <code>514</code>). Required.</td>
+<td>Must match the port the syslog server listens on.</td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>UDP, TCP, or TLS. Required.</td>
+<td>Governs delivery reliability and encryption; use TLS to encrypt log traffic in transit.</td>
+</tr>
+<tr>
+<td>Verify TLS certificate</td>
+<td>On to validate the server's certificate. Shown only when Transport is TLS.</td>
+<td>Prevents sending logs to an impostor server; recommended whenever TLS is used.</td>
+</tr>
+<tr>
+<td>Facility override</td>
+<td>Optional syslog facility number (e.g. <code>16</code>).</td>
+<td>Overrides the default facility so logs can be routed/filtered on the syslog side.</td>
+</tr>
+</tbody>
+</table>
+<p>Log streams (select at least one, or the connector cannot be saved):</p>
+<ul>
+<li><strong>Access log stream</strong> — request/access activity.</li>
+<li><strong>Audit log stream</strong> — security-relevant audit events.</li>
+<li><strong>Application log stream</strong> — general application logs.</li>
+<li><strong>CRL generation stream</strong> — CRL generation events.</li>
+</ul>
+<h4 id="siem-settings">SIEM settings</h4>
+<p>Pushes canonical SIEM events to a Splunk HEC or a generic HTTPS JSON collector.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to enter</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vendor</td>
+<td>Splunk HEC, or Generic HTTPS JSON (supports Wazuh, Elastic, etc.). Required.</td>
+<td>Selects how events are formatted and delivered to the collector.</td>
+</tr>
+<tr>
+<td>Collector URL</td>
+<td>Full HTTPS URL of the SIEM collector (e.g. <code>https://collector.example.com:8088/services/collector</code>). Required.</td>
+<td>Where events are sent; must be publicly reachable — private/loopback addresses are rejected.</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>HEC token (Splunk) or bearer token (Generic HTTPS). Optional.</td>
+<td>Sent in the Authorization header to authenticate to the collector; stored encrypted and masked after saving.</td>
+</tr>
+<tr>
+<td>Batch size</td>
+<td>Max events per request (default <code>500</code>, max <code>1000</code>). Required.</td>
+<td>Higher values mean fewer, larger requests; tune to the collector's limits.</td>
+</tr>
+<tr>
+<td>Batch interval (ms)</td>
+<td>How often a batch is flushed, in milliseconds (default <code>5000</code> = 5s). Required.</td>
+<td>Lower values deliver events sooner but generate more requests.</td>
+</tr>
+<tr>
+<td>Timeout (seconds)</td>
+<td>Seconds to wait for the collector before a send is treated as failed (default <code>10</code>). Optional.</td>
+<td>Failed sends are retried with backoff; too low a value can cause needless retries.</td>
+</tr>
+<tr>
+<td>Allow plain HTTP (no TLS)</td>
+<td>Off = HTTPS required (recommended). On only for testing an <code>http://</code> collector.</td>
+<td>Keeps event traffic encrypted in production; private/loopback addresses stay blocked either way.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="monitoring">Monitoring</h3>
 <p><img alt="Connector – Monitoring" src="../images/09_connector_monitoring.png" /></p>
-<p><strong>Logs</strong></p>
+<p>Read-only health snapshot for the selected connector, fetched from its health
+endpoint. There are no inputs on this tab.</p>
+<table>
+<thead>
+<tr>
+<th>Reading</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uptime</td>
+<td>Reported availability of the connector.</td>
+</tr>
+<tr>
+<td>Response time</td>
+<td>Average response time of health checks, in milliseconds.</td>
+</tr>
+<tr>
+<td>Success rate</td>
+<td>Percentage of recent operations that succeeded.</td>
+</tr>
+<tr>
+<td>Error rate</td>
+<td>Percentage of recent operations that failed.</td>
+</tr>
+<tr>
+<td>Last checked</td>
+<td>Timestamp of the most recent health check.</td>
+</tr>
+<tr>
+<td>Healthy</td>
+<td>Whether the connector is currently considered healthy (Yes/No).</td>
+</tr>
+</tbody>
+</table>
+<p>Values show as "no data" until the connector has been exercised. Use this tab to
+confirm a connector is reachable and performing before relying on it.</p>
+<h3 id="logs">Logs</h3>
 <p><img alt="Connector – Logs" src="../images/09_connector_logs.png" /></p>
-<p><strong>DLQ</strong></p>
+<p>Read-only activity log for the selected connector, newest entries first. Each row
+shows a timestamp, a severity icon (info, warning, error, or debug), the log
+message, and any structured metadata. There are no inputs on this tab; use it to
+troubleshoot failed operations or confirm recent activity.</p>
+<h3 id="dlq">DLQ</h3>
 <p><img alt="Connector – DLQ" src="../images/09_connector_dlq.png" /></p>
+<p>Dead-letter queue of SIEM push events that failed to reach the collector and are
+waiting to be re-sent. This tab appears only for SIEM connectors. The table lists
+each pending event's Created time, Vendor, Action, Attempts, and failure Reason.
+There are no inputs on this tab — only the actions below.</p>
+<ul>
+<li><strong>Refresh</strong> — reloads the pending queue so you can watch the count change.</li>
+<li><strong>Sync all</strong> — schedules a background drain that re-sends the whole queue in batches; returns immediately, so refresh to watch the pending count drop.</li>
+<li><strong>Sync</strong> (per row) — re-sends a single failed event immediately.</li>
+</ul>
 <h2 id="fields-add-new-connector-dialog">Fields — Add New Connector dialog</h2>
 <p><img alt="Add connector" src="../images/09_create_connector_dialog.png" /></p>
 <table>
