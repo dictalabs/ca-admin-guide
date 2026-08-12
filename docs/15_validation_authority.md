@@ -5,8 +5,11 @@
 
 ## Purpose
 
-A Validation Authority (VA) is an OCSP responder that answers real-time certificate-status
-queries for a CA, and keeps in sync with the CA's revocation state.
+A **Validation Authority (VA)** is an RFC 6960-compliant OCSP responder that provides real-time certificate-status validation for one or more Certification Authorities (CAs). It maintains and synchronizes certificate revocation and status information with the corresponding CA(s), enabling relying parties and applications to determine whether a certificate is currently valid, revoked, or otherwise unavailable for validation.
+
+The Dictalabs CA Validation Authority can be deployed in different configurations to meet varying PKI architecture and operational requirements. It can be deployed **on the same platform as Dictalabs CA**, providing an integrated CA and validation service, or it can be deployed as a **separate, dedicated Validation Authority**. In the latter configuration, the VA can serve certificates issued by Dictalabs CA or act as an independent validation service for **PKI deployments from other CA vendors**, subject to the supported certificate-status and revocation information interfaces.
+
+This flexible deployment model allows organizations to centralize certificate validation services, scale OCSP services independently from CA infrastructure, and integrate the Validation Authority into existing or heterogeneous PKI environments.  
 
 ## Navigation
 

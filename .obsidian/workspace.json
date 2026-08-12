@@ -11,10 +11,14 @@
             "id": "5c29b797c0e436e3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/15_validation_authority.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "15_validation_authority"
             }
           }
         ]
@@ -37,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -178,6 +184,11 @@
   },
   "active": "5c29b797c0e436e3",
   "lastOpenFiles": [
+    "docs/index.md",
+    "docs/06_dashboard.md",
+    "docs/04_super_admins.md",
+    "docs/02_license.md",
+    "docs/01_super_admin_overview.md",
     "docs/certificate_authorities.md",
     "site/search/search_index.json",
     "site/search",

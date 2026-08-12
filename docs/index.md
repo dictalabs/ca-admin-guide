@@ -1,6 +1,6 @@
 # Introduction
 
-**Dictalabs CA** is a Certificate Authority platform for operating a private **Public Key
+**Dictalabs CA** is a Certificate Authority platform for operating an enterprise or a private **Public Key
 Infrastructure (PKI)** — issuing, validating, and managing the full lifecycle of digital
 certificates from your own trusted roots. It runs on your infrastructure, is controlled entirely
 from a web console, and scales from a single team to many isolated customer workspaces.
