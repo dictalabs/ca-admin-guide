@@ -28,6 +28,7 @@ illustrative (sample environment).
 | 9 | 09_connector_logs.png | Connector – Logs |
 | 9 | 09_connector_dlq.png | Connector – DLQ |
 | 9 | 09_create_connector_dialog.png | Add Connector dialog |
+| 9 | 09_create_sso_connector_dialog.png | Add Connector dialog – Single Sign-On (SAML) |
 | 10 | 10_crypto_sources_list.png | Crypto Sources list |
 | 10 | 10_create_crypto_source_dialog.png | Add Crypto Source dialog |
 | 11 | 11_templates_list.png | Templates list |
@@ -44,12 +45,14 @@ illustrative (sample environment).
 | 14 | 14_ca_directives.png | CA – Directives |
 | 14 | 14_ca_crl_settings.png | CA – CRL Settings |
 | 14 | 14_ca_distribution.png | CA – Distribution |
+| 14 | 14_ca_ocsp_sync_targets.png | CA – Distribution – OCSP Sync Targets |
 | 15 | 15_validation_authority_form.png | VA – Validation Authorities |
 | 15 | 15_external_cas.png | VA – External CAs |
-| 15 | 15_sync_diagnostics.png | VA – Sync Diagnostics |
+| 15 | 15_external_ca_health.png | VA – External CAs – Health card |
 | 15 | 15_create_validation_authority_dialog.png | Create VA dialog |
 | 16 | 16_certificate_profiles_list.png | Certificate Profiles list |
 | 16 | 16_create_certificate_profile_dialog.png | Create Profile dialog |
+| 16 | 16_profile_details_dialog.png | Profile Details dialog |
 | 17 | 17_request_select_profile.png | Request wizard – select profile |
 | 17 | 17_request_form.png | Request wizard – form |
 | 17 | 17_request_generate_key.png | Request wizard – Generate Key + CSR |
@@ -64,7 +67,9 @@ illustrative (sample environment).
 | 22 | 22_logs_list.png | Logs list |
 | 22 | 22_log_detail_dialog.png | Log detail dialog |
 | 23 | 23_settings_general.png | General Settings |
+| 23 | 23_settings_authentication_policy.png | General Settings – Authentication policy |
 | 24 | 24_settings_log_rotation.png | Log Rotation |
 | 25 | 25_settings_branding.png | Branding |
 | 26 | 26_user_profile.png | User Profile |
 | 26 | 26_edit_profile_dialog.png | Edit Profile dialog |
+| 27 | 27_compliance_rules.png | Compliance Rules |

@@ -113,9 +113,36 @@ the Authority Information Access (AIA) URLs. The tab is labeled **Validations** 
 
 ![CA – Distribution](images/14_ca_distribution.png)
 
+### OCSP Sync Targets
+
+A second card on the Distribution tab, below the OCSP/AIA fields. It controls which Validation
+Authority responder(s) this CA pushes its certificate-status events to, overriding the tenant's
+global default sync target on a per-CA basis.
+
+![CA – OCSP Sync Targets](images/14_ca_ocsp_sync_targets.png)
+
+| Field | What to enter | Why it matters |
+| ----- | ------------- | -------------- |
+| Targets list | The VAs this CA currently pushes to — each row shows the target's name, its endpoint URL, a **Configured** status, a health indicator, and when it was last checked. Shows "No sync targets added yet" when none are set. | An empty list means the CA follows the global default — shown below the list as "Inheriting N target(s): &lt;name&gt;". Adding even one target here fully replaces the inherited default for this CA. |
+
+- **Add target** — opens a picker to add a Validation Authority as a push destination for this CA.
+- **Remove target** (per row) — stops pushing to that VA; the CA falls back to the global default
+  once its last explicit target is removed.
+- Targets save individually as you add or remove them — they are **not** covered by the tab's main
+  **Save configuration** button.
+
+!!! note "Important Notes"
+    - Use this when a CA's revocation data needs to reach a specific VA (or set of VAs) instead of
+      the tenant default — for example, a dedicated external-facing responder for one CA.
+    - If sync events look stale for a CA, check here first to confirm it is pushing to the VA you
+      expect before troubleshooting on the [Validation Authorities](15_validation_authority.md)
+      page.
+
 ## Actions
 
 - Per-tab **Save** — persist configuration.
+- **Download CRL** — export the CA's current CRL.
+- **Publish CRL** — trigger publication of a new CRL for this CA immediately.
 - **Download Certificate** — export the CA certificate.
 - **Revoke CA** — revoke the CA (invalidates everything it issued; irreversible).
 

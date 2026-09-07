@@ -21,9 +21,10 @@ Complete inventory of screens audited in both portals, with route, tabs, and dia
 | Certificates | `/certificates` | — | View, Revoke (row actions) |
 | Requests List | `/certificate-requests` | — | Request Details (View) |
 | Request Certificate | `/certificate-request` | Step 4: Upload CSR / Generate Key + CSR | wizard (4 steps + submit) |
-| Certificate Authorities | `/certificate-authorities` | Key Configuration, Certificate Data, Directives, CRL Settings, Distribution | Create CA; Download; Revoke CA |
-| Validation Authorities | `/validation-authorities` | Validation Authorities, External CAs, Sync Diagnostics | Create VA; Sync; DLQ replay |
+| Certificate Authorities | `/certificate-authorities` | Key Configuration, Certificate Data, Directives, CRL Settings, Distribution | Create CA; Download CRL; Publish CRL; Download Certificate; Revoke CA; Add OCSP Sync Target (Distribution tab) |
+| Validation Authorities | `/validation-authorities` | Validation Authorities, External CAs | Create VA; Delete VA; Sync; Register External CA; Delete External CA |
 | Certificate Profiles | `/certificate-profiles` | — | Create Profile; View Details; Edit Profile |
+| Compliance Rules | `/compliance-rules` | — | Set detail (Table/JSON) |
 | Crypto Sources | `/crypto-sources` | — | Add (Create Crypto Source) |
 | Connectors | `/connectors` | Configuration, Monitoring, Logs, DLQ | Add Connector; Delete |
 | Notifications | `/notifications` | — | Create Notification |
@@ -33,7 +34,7 @@ Complete inventory of screens audited in both portals, with route, tabs, and dia
 | Operators & Roles | `/operators` | Operator Management, Roles & Permissions | Create Operator; Create Role; View/Edit |
 | Logs | `/audit` | — | View (log detail) |
 | User Profile | `/profile` | — | Edit Profile |
-| General Settings | `/settings/general` | — | — |
+| General Settings | `/settings/general` | — | Authentication policy (2FA requirement, allow sign-in to enrol) |
 | Log Rotation | `/settings/logging` | — | — |
 | Branding | `/settings/branding` | — | theme customizer |
 | Forgot/Reset Password | `/forgot-password`, `/reset-password` | — | — |

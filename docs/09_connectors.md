@@ -6,8 +6,8 @@
 ## Purpose
 
 Connectors are integrations to external services — **Crypto Engine** (for key storage),
-**Email (SMTP)**, **Syslog**, and **SIEM** — used by crypto sources, notifications, and log
-export.
+**Email (SMTP)**, **Syslog**, **SIEM**, and **Single Sign-On** — used by crypto sources,
+notifications, log export, and operator authentication.
 
 ## Navigation
 
@@ -18,8 +18,8 @@ export.
 ![Connectors](images/09_connectors_list.png)
 
 - **Add Connector** button.
-- **Left panel:** connector list with type badge (Crypto Engine / SIEM / Email (SMTP) / Syslog),
-  a **Default** marker, and Active/Inactive status; each has a **Delete** control.
+- **Left panel:** connector list with type badge (Crypto Engine / SIEM / Email (SMTP) / Syslog /
+  Single Sign-On), a **Default** marker, and Active/Inactive status; each has a **Delete** control.
 - **Right panel:** selected connector with tabs.
 
 ## Detail tabs
@@ -44,7 +44,7 @@ connector type and appear at the top of the tab.
 Below the shared fields, the tab shows the connection settings for the
 connector's type (documented per type in the following subsections).
 
-- **Test connection** — sends the current settings to the server to verify they work before saving. Shown for Crypto Engine, Email (SMTP), Syslog, and SIEM connectors. Stored secrets are reused, so you need not re-enter a password just to test.
+- **Test connection** — sends the current settings to the server to verify they work before saving. Shown for Crypto Engine, Email (SMTP), Syslog, and SIEM connectors (not confirmed for Single Sign-On — see the note under Single Sign-On settings). Stored secrets are reused, so you need not re-enter a password just to test.
 - **Save changes** — persists the edits. Disabled until the name and all required fields are valid (and, for Syslog, at least one stream is selected).
 
 #### Crypto Engine settings
@@ -102,6 +102,60 @@ Pushes canonical SIEM events to a Splunk HEC or a generic HTTPS JSON collector.
 | Timeout (seconds) | Seconds to wait for the collector before a send is treated as failed (default `10`). Optional. | Failed sends are retried with backoff; too low a value can cause needless retries. |
 | Allow plain HTTP (no TLS) | Off = HTTPS required (recommended). On only for testing an `http://` collector. | Keeps event traffic encrypted in production; private/loopback addresses stay blocked either way. |
 
+#### Single Sign-On settings
+
+![Create SSO connector](images/09_create_sso_connector_dialog.png)
+
+Lets operators sign in via an external identity provider instead of (or alongside) a password.
+Choosing a **connector type = Single Sign-On** first asks for the protocol, which determines the
+rest of the fields.
+
+| Field | What to enter | Why it matters |
+| ----- | ------------- | -------------- |
+| SSO protocol | **SAML**, **OAuth2**, or **OpenID connect**. Required. | Selects which fields below apply and how the platform talks to the identity provider (IdP). |
+| Metadata URL | The IdP's metadata endpoint. Optional, shared by all three protocols. | Only backs this connector's health check — it does not drive login. |
+| Post-login redirect URL | Where the browser lands after a successful sign-in — the app's `/sso/callback` page. Required, shared by all three protocols. | Completes the login flow by returning the operator to the application. |
+
+**SAML** fields:
+
+| Field | What to enter | Why it matters |
+| ----- | ------------- | -------------- |
+| IdP metadata file | Upload the IdP's metadata XML. Optional. | Auto-fills the IdP entity ID, IdP SSO URL, and IdP certificate fields below from the file. |
+| IdP entity ID | The identity provider's issuer identifier — not this application's. Required. | Identifies which IdP issued the assertions. |
+| IdP SSO URL | Where the browser is sent to authenticate. Required. | The IdP's SAML sign-in endpoint. |
+| IdP certificate | Upload the certificate. Required. | SAML assertions must be signed with this certificate to be trusted. |
+| SP entity ID | Must match the Client ID configured on the IdP side exactly. Required. | Identifies this application (the service provider) to the IdP. |
+| ACS URL | Where the IdP sends the browser back — must exactly match what is registered on the IdP side. Required. | The Assertion Consumer Service endpoint that receives the SAML response. |
+
+**OAuth2** fields:
+
+| Field | What to enter | Why it matters |
+| ----- | ------------- | -------------- |
+| Authorization URL | Where the browser is sent to authenticate. Required. | The IdP's authorization endpoint. |
+| Token URL | Exchanges the authorization code for an access token. Required. | Backend-to-IdP token exchange endpoint. |
+| User info URL | Returns the signed-in user's profile. Required. | Used to fetch the operator's identity after authentication. |
+| Introspection URL | Confirms the token was issued to this connector. Required. | Validates tokens presented back to the platform. |
+| Client ID | The client ID as registered with the IdP. Required. | Identifies this connector to the IdP. |
+| Client secret | From the IdP client's Credentials tab. Required. | Authenticates this connector to the IdP; stored encrypted and masked after saving. |
+| Redirect URI | Where the IdP sends the browser back — must exactly match what is registered there. Required. | The OAuth2 callback endpoint. |
+| Scopes | Multi-select: **OpenID**, **Profile**, **Email**, **Offline access**. Required. | Determines what the token grants access to; include "openid" — some IdPs require it even for bare OAuth2. |
+
+**OpenID Connect** fields:
+
+| Field | What to enter | Why it matters |
+| ----- | ------------- | -------------- |
+| Client ID | The client ID as registered with the IdP. Required. | Identifies this connector to the IdP. |
+| Client secret | From the IdP client's Credentials tab. Required. | Authenticates this connector to the IdP; stored encrypted and masked after saving. |
+| Redirect URI | Where the IdP sends the browser back — must exactly match what is registered there. Required. | The OIDC callback endpoint. |
+| Issuer URL | The IdP's issuer. Required. | The other endpoints (authorization, token, JWKS, etc.) are read automatically from this issuer's discovery document. |
+| JWKS URI | Overrides the signing keys read from the issuer's discovery document. Optional. | Use only if the discovery document's keys are wrong or unreachable. |
+| Scopes | Multi-select: **OpenID**, **Profile**, **Email**, **Offline access**. Required. | Same as OAuth2 above. |
+
+!!! note "Not independently verified"
+    No live SSO connector existed to inspect its saved detail/edit form, Monitoring, or Logs tabs —
+    the fields above come from the Add Connector dialog only. Confirm the edit-form behavior (e.g.
+    whether **Test connection** appears for this type) before relying on it.
+
 ### Monitoring
 
 ![Connector – Monitoring](images/09_connector_monitoring.png)
@@ -149,7 +203,7 @@ There are no inputs on this tab — only the actions below.
 
 | Field | Description | Required | Notes |
 | ----- | ----------- | -------- | ----- |
-| Connector Type | Crypto Engine / SIEM / Email (SMTP) / Syslog | Yes | Selecting a type reveals its config fields |
+| Connector Type | Crypto Engine / SIEM / Email (SMTP) / Syslog / Single Sign-On | Yes | Selecting a type reveals its config fields; Single Sign-On also asks for a protocol (SAML/OAuth2/OpenID connect) first |
 | Connector Name | Display name | Yes | — |
 | Description | Purpose | No | — |
 | Status | Active / Inactive | No | Defaults to Active |
@@ -163,5 +217,7 @@ There are no inputs on this tab — only the actions below.
 4. Click **Create Connector**.
 
 !!! note "Important Notes"
-    - Configuration fields differ per type (SMTP host/port, syslog target, SIEM endpoint, crypto engine settings).
+    - Configuration fields differ per type (SMTP host/port, syslog target, SIEM endpoint, crypto engine settings, SSO protocol/IdP settings).
     - Use the **DLQ** tab to replay failed SIEM/event pushes.
+    - A Single Sign-On connector configures how operators authenticate; it is unrelated to the
+      Crypto Engine connector used for key storage.

@@ -13,15 +13,16 @@
 | Certificate Authorities | Tenant | Root/Intermediate/External CA config | [link](12_create_root_ca.md) |
 | Validation Authorities | Tenant | OCSP responders, external CAs, sync | [link](15_validation_authority.md) |
 | Certificate Profiles | Tenant | Issuance policy profiles | [link](16_certificate_profiles.md) |
+| Compliance Rules | Tenant | Baseline-requirement standards & zlint checks reference | [link](27_compliance_rules.md) |
 | Crypto Sources | Tenant | HSM/PKCS#11/software key stores | [link](10_crypto_sources.md) |
-| Connectors | Tenant | SIEM/SMTP/SYSLOG/Crypto Engine integrations | [link](09_connectors.md) |
+| Connectors | Tenant | SIEM/SMTP/SYSLOG/Crypto Engine/Single Sign-On integrations | [link](09_connectors.md) |
 | Notifications | Tenant | Alert schedules | [link](20_notifications.md) |
 | API Keys | Tenant | Scoped programmatic access | [link](21_api_keys.md) |
 | Approvals | Tenant | Dual-control approval queue | [link](19_approvals.md) |
 | Templates | Tenant | Certificate blueprints | [link](11_templates.md) |
 | Operators & Roles | Tenant | RBAC: users, roles, permissions | [link](08_operators.md) |
 | Logs | Tenant | Immutable audit trail | [link](22_logs.md) |
-| Settings | Tenant | General, Log Rotation, Branding | [general](23_settings_general.md) |
+| Settings | Tenant | General (incl. authentication policy), Log Rotation, Branding | [general](23_settings_general.md) |
 | User Profile | Tenant | Account, MFA, effective permissions | [link](26_user_profile.md) |
 
 ## Feature Inventory
@@ -32,8 +33,10 @@
 | Per-tenant quotas & request rate limit | Tenant Detail | Blank quota = Unlimited |
 | License modules (CA, VA) + capabilities | License | Gates tenant features |
 | Per-tenant branding | Branding / Login | Logo, name, theme |
-| CA hierarchy (Root/Intermediate/External) | Certificate Authorities | Key ceremony, CRL, distribution |
-| OCSP responders + CA→VA sync + DLQ | Validation Authorities | Resync, batch push, replay |
+| CA hierarchy (Root/Intermediate/External) | Certificate Authorities | Key ceremony, CRL, distribution, per-CA OCSP sync targets |
+| OCSP responders + CA→VA sync | Validation Authorities | Per-CA sync status, manual resync; per-CA push targets set on the CA's Distribution tab |
+| Compliance rule sets (zlint-backed) | Compliance Rules | CABF/eIDAS/RFC standards mapped to zlint checks, by certificate type |
+| Two-factor authentication policy | Settings → General | Not required / required for issuance-capable roles / required for all |
 | Templates with 6 config dimensions | Templates | Extensions, subject/SAN constraints |
 | Profiles (template + CA + approval) | Profiles | Drive request wizard |
 | Certificate request wizard | Request Certificate | Upload CSR or generate key+CSR |
@@ -43,7 +46,7 @@
 | Operator auth: Password, SSO, Mutual TLS | Create/Edit Operator | Per-operator toggles |
 | MFA (TOTP) + Client-cert auth | Profile | Per-user security |
 | API keys: scopes, rate limit, IP allowlist, expiry, rotate | API Keys | Secret shown once |
-| Connectors: SIEM/SMTP/SYSLOG/Crypto Engine | Connectors | Monitoring, Logs, DLQ tabs |
+| Connectors: SIEM/SMTP/SYSLOG/Crypto Engine/Single Sign-On (SAML, OAuth2, OIDC) | Connectors | Monitoring, Logs, DLQ tabs |
 | Log rotation, log signing, cloud archival | Log Rotation | Signing via crypto source |
 | Audit trail (immutable) + log detail | Logs | Pass/Fail, payload, trace |
 | SIEM export + DLQ replay | Connectors / VA / API perms | `siem:read`, `siem.manage` |

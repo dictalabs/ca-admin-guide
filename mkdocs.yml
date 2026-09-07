@@ -51,6 +51,7 @@ nav:
     - "Validation Authority (OCSP)": 15_validation_authority.md
   - "Issuance":
     - "Create Certificate Profiles": 16_certificate_profiles.md
+    - "Compliance Rules": 27_compliance_rules.md
     - "Request & Issue a Certificate": 17_request_certificate.md
     - "Manage Certificates": 18_certificates.md
   - "Operations & Governance":

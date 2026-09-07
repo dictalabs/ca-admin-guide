@@ -31,7 +31,7 @@ Fields marked required must be filled before the **Create profile** button enabl
 | Field | What to enter | Why it matters |
 | ----- | ------------- | -------------- |
 | Profile name | A clear, human-readable name (e.g. "Web server - standard TLS"). Required. | This is the label requesters pick from when requesting a certificate, so make it descriptive of the use case. |
-| Certificate type | Pick one of **Server auth**, **Client auth**, **Code signing**, or **Email**. Required. | A free-form classification label used for filtering and display. The actual EKU/key usages come from the linked template, not from this field. (The former **SSL/TLS** option was removed; use **Server auth** instead.) |
+| Certificate type | Pick one of **Server auth**, **Client auth**, **Code signing**, **Email**, or **Document Signing**. Required. | A free-form classification label used for filtering and display. The actual EKU/key usages come from the linked template, not from this field. (The former **SSL/TLS** option was removed; use **Server auth** instead.) |
 | Description | Optional free text describing the purpose and use case of the profile. | Helps other admins understand when this profile should be used; shown on the profile card and details. |
 | Issuing CA | Select the [Sub CA](13_create_sub_ca.md) that will sign certificates issued from this profile. Required. | Only **active intermediate** CAs are listed. This binds every certificate from this profile to a specific issuer and its trust chain. |
 | Approval mode | Choose **Auto** or **Manual**. | **Auto** issues immediately on request; **Manual** routes each request to [Approvals](19_approvals.md) for a reviewer. Governs whether issuance needs a human check. |
@@ -47,7 +47,7 @@ plus one extra control.
 | Field | What to enter | Why it matters |
 | ----- | ------------- | -------------- |
 | Profile name | Update the display name. Required. | Same role as at creation. |
-| Certificate type | Reselect from **Server auth / Client auth / Code signing / Email**. Required. | Reclassifies the profile for filtering/display. |
+| Certificate type | Reselect from **Server auth / Client auth / Code signing / Email / Document Signing**. Required. | Reclassifies the profile for filtering/display. |
 | Description | Update the free-text description. | Keeps the profile's stated purpose current. |
 | Issuing CA | Reselect the intermediate issuing CA. Required. | Repoints future issuance at a different Sub CA and trust chain. |
 | Approval mode | **Auto** or **Manual**. | Switches new requests between immediate issuance and routing to [Approvals](19_approvals.md). |
@@ -55,6 +55,24 @@ plus one extra control.
 | Certificate template | Reselect one end-entity template. Required. | Re-derives all key usages and extensions from the newly chosen template. |
 
 - **Edit profile / Cancel** — Edit saves changes; Cancel discards them.
+
+## Profile details (View) dialog
+
+Opened by **View details** on a profile card. Read-only summary of the profile plus the
+cryptographic constraints inherited from its template.
+
+![Profile Details](images/16_profile_details_dialog.png)
+
+| Field | Shows | Why it matters |
+| ----- | ----- | -------------- |
+| Name, Type, Issuing CA, Validity, Approval mode, Status, Template, Description | Same values as the profile card and Edit dialog. | Quick reference without opening Edit. |
+| Created / Updated | Timestamps for the profile record. | Tracks when the profile was defined and last changed. |
+| Key algorithms | Algorithm families the template allows (e.g. RSA). | Confirms what key types certificates from this profile may use before you point requesters at it. |
+| RSA key sizes | Allowed RSA modulus sizes (e.g. 2048 bits). | Same purpose for RSA-specific sizing. |
+| ECDSA key sizes / ECDSA curves | Allowed ECDSA sizes/curves, when the template permits ECDSA. | Same purpose for ECDSA keys. |
+| Signature algorithms | Allowed signature algorithms (e.g. SHA256withRSA). | Confirms the signing algorithm(s) issued certificates will use. |
+
+- **Close** — dismisses the dialog without changes.
 
 ## Configure Profile dialog
 

@@ -31,9 +31,10 @@ Dictalabs CA lets a PKI operator:
 | ---- | ------------ |
 | **CA hierarchy** | Root and Sub CAs, key ceremonies, CA configuration (keys, directives, CRL, distribution/AIA), revocation. |
 | **Issuance** | Certificate profiles & templates, request/CSR wizard, subject & SAN constraints, EKUs, approval modes. |
-| **Validation** | OCSP responder / Validation Authority, CRL generation & publishing, delta CRLs, distribution points. |
+| **Validation** | OCSP responder / Validation Authority, CRL generation & publishing, delta CRLs, distribution points, per-CA OCSP sync targets. |
+| **Compliance** | Baseline-requirement rule sets (CABF, eIDAS/ETSI, RFC 5280) mapped to the zlint checks that enforce them, browsable by certificate type. |
 | **Cryptography** | Software key stores and **HSM / PKCS#11** crypto sources; classical (RSA, ECDSA) and **post-quantum** algorithms (**ML-DSA**, **ML-KEM**). |
-| **Access control** | Roles & granular permissions, operators, **MFA**, approval (dual-control) workflows. |
+| **Access control** | Roles & granular permissions, operators, **MFA** (including a tenant-wide 2FA enforcement policy), approval (dual-control) workflows. |
 | **Operations** | Dashboard, notifications (SMTP), API keys, audit/access logs, log rotation & signing, SIEM/Syslog export. |
 | **Multi-tenancy** | Optional isolated tenant workspaces on one deployment (see [Multi-Tenancy & Tenants](multi_tenancy.md)). |
 

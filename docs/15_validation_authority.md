@@ -17,10 +17,16 @@ This flexible deployment model allows organizations to centralize certificate va
 
 ## Overview
 
-The page has three tabs — **Validation authorities**, **External CAs**, and **Sync diagnostics** —
-plus a context button in the header (**Create validation authority** on the first tab,
-**Register external CA** on the second). Both create actions and every write control require the
-`va.configure` permission; without it the tabs are read-only.
+The page has two tabs — **Validation authorities** and **External CAs** — plus a context button in
+the header (**Create validation authority** on the first tab, **Register external CA** on the
+second). Both create actions and every write control require the `va.configure` permission;
+without it the tabs are read-only.
+
+!!! note "Sync diagnostics tab removed"
+    A third **Sync diagnostics** tab (global resync/checkpoint controls and a dead-letter queue)
+    previously existed here. It has been removed. Per-CA push targets are now configured directly
+    on each CA's **Distribution** tab — see
+    [OCSP Sync Targets](14_configure_ca.md#ocsp-sync-targets).
 
 ### Validation authorities
 
@@ -36,12 +42,17 @@ OCSP Responder form:
 | ----- | ------------- | -------------- |
 | Name | A short, unique label for the responder (for example, "Issuing CA 1 OCSP"). | Identifies the VA in the list and in logs; it is not published to clients. |
 | Description | Optional free text describing scope or ownership. | Helps operators tell responders apart; purely informational. |
-| Certificate authority | The issuing CA whose certificate status this responder answers for. | Binds the VA to one CA. Changing it reloads the signing-certificate list and resets the selected signer. Required. |
-| OCSP signing certificate | The certificate used to sign OCSP responses, chosen from certificates issued under the selected CA. | The private key behind this certificate signs every response; clients validate it against the CA. The list is empty until a CA is selected, and only appears once a CA is chosen. |
+| Certificate authority | The CA whose certificate status this responder answers for — the dropdown lists both internal CAs and CAs [registered as external](#external-cas). | Binds the VA to one CA. Changing it reloads the signing-certificate list and resets the selected signer. Required. |
+| OCSP signing certificate | For an internal CA: the certificate used to sign OCSP responses, chosen from certificates issued under the selected CA. | The private key behind this certificate signs every response; clients validate it against the CA. The list is empty until a CA is selected, and only appears once a CA is chosen. |
 | Response validity (seconds) | How long a response stays valid — the `nextUpdate` window (for example, 3600 for one hour). | Longer values ease responder load and allow caching but delay propagation of new revocations; shorter values are fresher but costlier. |
 | ResponderID | `KEYHASH` (hash of the responder public key) or `NAME` (the responder's subject name). | Tells clients how the responder identifies itself in the response. `KEYHASH` is the common default; use `NAME` only if a relying client requires it. |
 | Max-Age (seconds) | The value advertised in the HTTP `Cache-Control: max-age` header. | Governs how long HTTP caches and CDNs may hold a response. Keep it at or below the response validity so caches never serve a response past its `nextUpdate`. |
 | Non-issued certificate behavior | Choose Good, Revoked, or Unauthorized for serials this CA never issued. | Controls the answer for unknown serials. "Revoked" (or "Unauthorized") is the safe, CA/Browser-Forum-aligned choice; "Good" can mask forged serials and should be used with care. |
+
+When the selected **Certificate authority** is external, the OCSP signing certificate field is
+replaced by a note directing you to the [External CAs](#external-cas) tab: for an external CA the
+signer key is generated there, its CSR is signed by the remote CA, and the signed certificate is
+imported to activate OCSP — it cannot be picked from a list here.
 
 Response option checkboxes:
 
@@ -55,12 +66,13 @@ Response option checkboxes:
 
 Actions on this tab:
 
+- **Delete** — removes the selected VA and its configuration (irreversible).
 - **Reset** — discards unsaved edits and reloads the stored configuration.
 - **Save** — persists the responder configuration (POST/PUT to the VA).
 - **Create validation authority** (header button) — opens the create dialog (see below).
 
 Sync status card (shown under the form for the selected VA): a per-CA table with a health dot,
-**CA**, **Last push**, **DLQ pending**, and **Cursor** columns. Controls:
+**CA**, **Last push**, and **Cursor** columns. Controls:
 
 - Refresh — reloads the sync status.
 - **Sync this VA** — pushes pending certificate-status events for all CAs mapped to this VA.
@@ -92,9 +104,9 @@ one step.
 ### External CAs
 
 Registers certificate authorities issued outside this platform so the VA can answer OCSP for them.
-The left list is searchable and paginated; selecting a CA opens three cards — read-only **overview**,
-**OCSP signer** setup, and **Ingest API key** management. Use the header **Register external CA**
-button to add one.
+The left list is searchable and paginated; selecting a CA opens four cards — read-only **overview**,
+**Health**, **OCSP signer** setup, and **Ingest API key** management. Use the header
+**Register external CA** button to add one.
 
 ![VA – External CAs](images/15_external_cas.png)
 
@@ -111,6 +123,14 @@ Register external CA dialog:
 Overview card (read-only) shows: Subject DN, Serial number, Signing algorithm, Status, OCSP signer
 active (Yes/No), and Created at. A **Delete** action removes the CA together with its OCSP runtime
 rows, signer config, and ingest API key (irreversible).
+
+Health card (read-only) shows an aggregated status — **Healthy** or **Degraded** — rolled up from
+three checks: **CA Certificate** (validity), **OCSP Signer** (whether a signer certificate has been
+imported), and **Ingest Activity** (whether the external CA's system has pushed status data). When
+Degraded, an **Issues** list explains which check failed (for example, "No ingest activity
+recorded").
+
+![External CA Health](images/15_external_ca_health.png)
 
 OCSP signer card — generate a keypair, get its CSR signed by the external CA, then import the signed
 certificate to activate OCSP:
@@ -141,50 +161,15 @@ status. It shows Key ID, Status, Total requests, and Last used (read-only), plus
   (good/revoked/unknown); `revoked_at`, `revoke_reason`, `issued_at`, and `expires_at` are optional
   ISO 8601 fields. Maximum 5000 items per request.
 
-### Sync diagnostics
-
-Advanced, global CA-to-VA replay tools for unmapped CAs, multi-source setups, bootstrap reseeds, and
-debugging. Use it when the per-VA **Sync status** shows stale events or the dead-letter queue has
-pending items. Two cards: **advanced controls** and the **dead-letter queue**.
-
-![VA – Sync Diagnostics](images/15_sync_diagnostics.png)
-
-Advanced controls:
-
-| Field | What to enter | Why it matters |
-| ----- | ------------- | -------------- |
-| Source (optional) | A sync source identifier (for example, `ca-machine-1`). Leave blank to use the default source from settings. | Scopes the resync/checkpoint operations to one source in multi-source deployments. |
-| Batch size | Number of events per push (1–5000, default 500). | Larger batches are faster but heavier; tune to responder/network limits. |
-| Checkpoint cursor | Read-only; use the lookup button to fetch the current cursor for the entered source. | Shows how far the last push progressed; useful before deciding to resume or reset. |
-| Resume from checkpoint | Checkbox — continue from the last saved cursor. | Avoids re-pushing already-synced events; leave on for incremental catch-up. |
-| Reset bootstrap (full replay) | Checkbox — reseed and replay everything from the start. | Forces a complete re-push; use only when the VA state is corrupt or being rebuilt, as it is expensive. |
-
-Advanced-control actions:
-
-- Checkpoint lookup (refresh icon) — fetches the current cursor for the entered source.
-- **Run full resync** — runs a full resync honoring the resume/reset options above.
-- **Push one batch** — pushes a single batch (of the configured size) for step-by-step debugging.
-- The **Last result** panel shows the raw JSON response of the most recent run.
-
-Dead-Letter queue — failed sync events that can be replayed to retry pushing to the VA:
-
-| Control | What to enter | Why it matters |
-| ------- | ------------- | -------------- |
-| Filter by CA id | Optional CA id to narrow the list. | Isolates failures for one CA. |
-| Status | Pending, Replayed, or Failed. | Filters the queue; only **Pending** events can be replayed. |
-
-- Refresh — reloads the queue for the current filters.
-- **Replay pending** — retries pushing the pending events (respects the source/CA/limit filters).
-  Enabled only when the status filter is **Pending** and at least one event is listed.
-- The table lists Source, CA, Event, Attempts, Status, Created at, and Last error per event.
-
 ## Step-by-Step
 
 1. Open **Validation Authorities → Create Validation Authority** and complete the dialog.
 2. Select the VA, set **Certificate Authority**, **OCSP Signing Certificate**, validity, and
    response options.
-3. Click **Save**. Use **Sync This VA** / **Sync Diagnostics** if status is stale.
+3. Click **Save**. Use **Sync This VA** (or a per-CA resync) if status is stale.
 
 !!! note "Important Notes"
     - A VA depends on a response CA and an OCSP signing certificate.
-    - Use **Sync Diagnostics** when events are stale or the DLQ has pending items.
+    - If a CA's sync status is stale, use **Sync This VA** or the per-CA resync action here, or
+      adjust that CA's [OCSP Sync Targets](14_configure_ca.md#ocsp-sync-targets) on its
+      Distribution tab.
