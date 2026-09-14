@@ -15,10 +15,10 @@ tabs.
 
 ## Configuration tabs
 
-The detail pane exposes five tabs: Key Configuration, Certificate Data, Directives, CRL
-Settings, and Distribution. Configuration is locked (read-only) once the CA certificate has
-been issued or the CA has been revoked — plan values before signing. A single **Save
-configuration** button at the bottom persists all editable tabs together.
+The detail pane exposes seven tabs: Key Configuration, Certificate Data, Directives, CRL
+Settings, Distribution, Rollover, and History. Configuration is locked (read-only) once the CA
+certificate has been issued or the CA has been revoked — plan values before signing. A single
+**Save configuration** button at the bottom persists all editable tabs together.
 
 ### Key Configuration
 Creates or reviews the CA's private key pair. Until a key pair exists you supply the fields
@@ -138,13 +138,74 @@ global default sync target on a per-CA basis.
       expect before troubleshooting on the [Validation Authorities](15_validation_authority.md)
       page.
 
+### Rollover
+
+Shows this CA's place in a rekey/rollover succession chain, if any. Blank/inactive when the CA
+has neither been superseded nor is itself a successor.
+
+![CA – Rollover tab](images/14_ca_rollover_tab.png)
+
+- **If this CA replaced an earlier one** (created via **Rekey** or **Key rollover** — see
+  [Actions](#actions) below): shows **Replaces** with the predecessor CA's name, a link to open
+  it, and a note that the predecessor keeps serving revocation (CRL/OCSP) for certificates it
+  issued.
+- **If this CA has been superseded** (rolled over to a successor): shows the **Successor CA**
+  name, the **Handed over** timestamp, and — for a **Root CA** only — a **Link certificates**
+  section with two downloadable certificates, **new_with_old** and **old_with_new**, that
+  cryptographically bridge the old and new root keys (classic root key-rollover link
+  certificates). Subordinate (Sub) CAs never get link certificates: their parent CA signs the
+  successor directly, so both chain to the same trust anchor without needing one.
+
+![CA – Rollover tab, Root CA link certificates](images/14_ca_rollover_tab_root_link_certs.png)
+
+### History
+
+A read-only audit trail of every certificate this CA has ever held — relevant after a **Renew
+certificate** or **Rekey**, since either can leave more than one certificate in the CA's past.
+
+![CA – History tab](images/14_ca_history_tab.png)
+
+| Column | Meaning |
+| ------ | ------- |
+| # | Sequence number, oldest first. |
+| Status | e.g. **In use** for the certificate currently active. |
+| Serial number | The certificate's serial number. |
+| Valid until | Expiry date of that certificate. |
+| Key | The key-pair name backing that certificate. |
+
+Superseded certificates are kept in this list because certificates issued while they were active
+may still be in use.
+
 ## Actions
 
 - Per-tab **Save** — persist configuration.
+- **Rename this CA** — inline edit of the CA's display name next to its heading; **Save** /
+  **Cancel**.
 - **Download CRL** — export the CA's current CRL.
 - **Publish CRL** — trigger publication of a new CRL for this CA immediately.
 - **Download Certificate** — export the CA certificate.
-- **Revoke CA** — revoke the CA (invalidates everything it issued; irreversible).
+- **More actions** menu:
+    - **Renew certificate** — issues a new certificate for this CA using its **existing key**.
+      Certificates already issued by this CA keep working; nothing is revoked or re-issued.
+      Optional **Validity** override (value + Days/Months/Years) — leave blank to use the CA's
+      renewal policy or the template default.
+    - **Rekey** — creates a **successor CA with a new key**, moves issuance to it, then
+      automatically **re-issues every certificate** this CA issued under the successor and
+      **revokes this CA and its old certificates**. Fields: optional **Successor CA name**
+      (defaults to a generated name) and **Template**. Use when the current key must stop being
+      trusted.
+    - **Key rollover** — creates a **successor CA with a new key** and moves *new* issuance to
+      it, but does **not** re-issue or revoke anything: this CA keeps publishing CRLs and
+      answering OCSP for the certificates it already issued, until its own certificate expires.
+      Fields: optional **Successor CA name** and **Template**. Use for a scheduled key rotation
+      where the old key should keep working.
+    - **Revoke CA** — revoke the CA (invalidates everything it issued; irreversible).
+- The CA list shows a **Rekeyed** or **Rolled over** badge next to a superseded CA's type, and the
+  detail pane's **Status** field shows a link — **Succeeds &lt;name&gt;** on a successor, or
+  **Rolled over → &lt;name&gt;** on a predecessor — to jump directly to the linked CA. See
+  [Rollover](#rollover) and [History](#history) above for the full chain and certificate record.
+
+![CA – More actions menu](images/14_ca_more_actions_menu.png)
 
 ## Step-by-Step
 
@@ -155,6 +216,11 @@ global default sync target on a per-CA basis.
 
 !!! note "Important Notes"
     - OCSP responses are served by a [Validation Authority](15_validation_authority.md).
+    - **Renew certificate**, **Rekey**, and **Key rollover** are three different operations —
+      pick based on whether the key stays the same (Renew), must stop being trusted (Rekey), or
+      is being rotated on schedule while the old key keeps working (Key rollover).
 
 !!! warning "Critical Warning"
-    Revoking a CA cascades to all certificates that CA issued — use with extreme care.
+    Revoking a CA cascades to all certificates that CA issued — use with extreme care. **Rekey**
+    has the same effect on this CA and its own certificates once the successor is signed — review
+    the "What this commits you to" summary in its dialog before confirming.
