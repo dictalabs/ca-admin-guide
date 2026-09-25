@@ -58,7 +58,7 @@ re-entering every setting.
 
 1. On a template card, open **More actions → Clone**.
 2. The **Clone template** dialog opens with the full six-tab template form pre-filled from the
-   original; the name defaults to the original name plus " copy" (for example *Email S/MIME copy*). Rename it — template names must be unique.
+   original; the name defaults to the original name plus " copy" (for example *client Auth copy*). Rename it — template names must be unique.
 3. Review and adjust any tab, then click **Create template**. The original is left untouched.
 
 ![Clone template dialog](images/11_clone_template_dialog.png)
