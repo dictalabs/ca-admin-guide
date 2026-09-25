@@ -17,9 +17,52 @@ extensions, subject-field and SAN constraints. You typically create a **Root CA 
 
 ![Templates](images/11_templates_list.png)
 
-- **Create Template** button, search, type filter.
-- **Card grid** — name, type (Root CA / Sub CA / End Entity), version, validity, key algorithm,
-  signature algorithm, tags, plus **View / Edit**.
+- **Import template** and **Create Template** buttons, search, type filter.
+- **Bulk selection bar** — a select-all checkbox (current page), an "N selected" counter,
+  **Export selected**, and **Clear**.
+- **Card grid** — each card has a selection checkbox, name, type (Root CA / Sub CA / End Entity),
+  version, validity, key algorithm, signature algorithm, created/updated dates, tags, plus
+  **View / Edit** and a **More actions** menu (**Clone**, **Delete template**).
+
+## Import, Export and Clone
+
+Move templates between environments (for example dev to production) or start a new template
+from an existing one, without re-entering every setting.
+
+### Export templates
+
+![Templates – bulk export selection](images/11_templates_bulk_export_selection.png)
+
+1. Tick the checkbox on one or more template cards (use the top checkbox to select every card on
+   the current page). The bar shows "N selected".
+2. Click **Export selected** to download the chosen templates as a single JSON file.
+3. **Clear** empties the selection.
+
+!!! note
+    Selection applies to the current page only; change page size or export in batches if you need
+    templates from other pages.
+
+### Import a template
+
+![Import template dialog](images/11_import_template_dialog.png)
+
+1. Click **Import template**.
+2. Click **Choose file** and select a template export file (`.json`) previously produced by
+   **Export selected**.
+3. Review what the file contains, then click **Import**. **Cancel** closes the dialog without
+   importing.
+
+### Clone a template
+
+![Template card – More actions menu](images/11_templates_more_actions_menu.png)
+
+1. On a template card, open **More actions → Clone**.
+2. The **Clone template** dialog opens with the full six-tab template form pre-filled from the
+   original; the name defaults to the original name plus " copy" (for example *QA Email S/MIME
+   copy*). Rename it — template names must be unique.
+3. Review and adjust any tab, then click **Create template**. The original is left untouched.
+
+![Clone template dialog](images/11_clone_template_dialog.png)
 
 ## Fields — Create Template dialog
 
