@@ -888,6 +888,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import-export-and-clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import, Export and Clone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import, Export and Clone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-a-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import a template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-a-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clone a template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fields-create-template-dialog" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1967,6 +2017,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import-export-and-clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import, Export and Clone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import, Export and Clone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-a-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import a template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-a-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clone a template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fields-create-template-dialog" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2091,10 +2191,47 @@ extensions, subject-field and SAN constraints. You typically create a <strong>Ro
 <h2 id="overview">Overview</h2>
 <p><img alt="Templates" src="../images/11_templates_list.png" /></p>
 <ul>
-<li><strong>Create Template</strong> button, search, type filter.</li>
-<li><strong>Card grid</strong> — name, type (Root CA / Sub CA / End Entity), version, validity, key algorithm,
-  signature algorithm, tags, plus <strong>View / Edit</strong>.</li>
+<li><strong>Import template</strong> and <strong>Create Template</strong> buttons, search, type filter.</li>
+<li><strong>Bulk selection bar</strong> — a select-all checkbox (current page), an "N selected" counter,
+  <strong>Export selected</strong>, and <strong>Clear</strong>.</li>
+<li><strong>Card grid</strong> — each card has a selection checkbox, name, type (Root CA / Sub CA / End Entity),
+  version, validity, key algorithm, signature algorithm, created/updated dates, tags, plus
+  <strong>View / Edit</strong> and a <strong>More actions</strong> menu (<strong>Clone</strong>, <strong>Delete template</strong>).</li>
 </ul>
+<h2 id="import-export-and-clone">Import, Export and Clone</h2>
+<p>Move templates between environments or start a new template from an existing one, without
+re-entering every setting.</p>
+<h3 id="export-templates">Export templates</h3>
+<p><img alt="Templates – bulk export selection" src="../images/11_templates_bulk_export_selection.png" /></p>
+<ol>
+<li>Tick the checkbox on one or more template cards (use the top checkbox to select every card on
+   the current page). The bar shows "N selected".</li>
+<li>Click <strong>Export selected</strong> to download the chosen templates as a single JSON file.</li>
+<li><strong>Clear</strong> empties the selection.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Selection applies to the current page only; change page size or export in batches if you need
+templates from other pages.</p>
+</div>
+<h3 id="import-a-template">Import a template</h3>
+<p><img alt="Import template dialog" src="../images/11_import_template_dialog.png" /></p>
+<ol>
+<li>Click <strong>Import template</strong>.</li>
+<li>Click <strong>Choose file</strong> and select a template export file (<code>.json</code>) previously produced by
+   <strong>Export selected</strong>.</li>
+<li>Review what the file contains, then click <strong>Import</strong>. <strong>Cancel</strong> closes the dialog without
+   importing.</li>
+</ol>
+<h3 id="clone-a-template">Clone a template</h3>
+<p><img alt="Template card – More actions menu" src="../images/11_templates_more_actions_menu.png" /></p>
+<ol>
+<li>On a template card, open <strong>More actions → Clone</strong>.</li>
+<li>The <strong>Clone template</strong> dialog opens with the full six-tab template form pre-filled from the
+   original; the name defaults to the original name plus " copy" (for example <em>client Auth copy</em>). Rename it — template names must be unique.</li>
+<li>Review and adjust any tab, then click <strong>Create template</strong>. The original is left untouched.</li>
+</ol>
+<p><img alt="Clone template dialog" src="../images/11_clone_template_dialog.png" /></p>
 <h2 id="fields-create-template-dialog">Fields — Create Template dialog</h2>
 <p>The dialog has six tabs: <strong>General</strong>, <strong>Permissions</strong>, <strong>Extensions</strong>, <strong>Validation
 Data</strong>, <strong>Subject fields</strong>, and <strong>SAN constraints</strong>. Fields marked with a red asterisk (*)

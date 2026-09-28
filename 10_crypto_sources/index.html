@@ -814,6 +814,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fields — Create Crypto Source dialog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-config-aws-kms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Store config — AWS KMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#store-config-azure-key-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Store config — Azure key Vault
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields-edit-crypto-source-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields — Edit Crypto Source dialog
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1903,6 +1942,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fields — Create Crypto Source dialog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-config-aws-kms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Store config — AWS KMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#store-config-azure-key-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Store config — Azure key Vault
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields-edit-crypto-source-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields — Edit Crypto Source dialog
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1948,7 +2026,10 @@ when generating or using keys.</p>
 <p><img alt="Crypto Sources" src="../images/10_crypto_sources_list.png" /></p>
 <ul>
 <li><strong>Add</strong> button, search, connector filter, store filter.</li>
-<li><strong>Table</strong> — Name, Store Type (PKCS#11 / SOFTWARE), Connector, Created at, Actions.</li>
+<li><strong>Table</strong> — Name, Store Type, Connector, Created at, Actions.</li>
+<li><strong>Actions</strong> (per row) — <strong>Test connection</strong>, <strong>Edit</strong>, <strong>Delete</strong>. <strong>Test connection</strong> pings the
+  backing store and shows an inline result (e.g. "Test connection passed. Crypto source is
+  reachable.") next to the row's Name, without opening a dialog.</li>
 </ul>
 <h2 id="fields-create-crypto-source-dialog">Fields — Create Crypto Source dialog</h2>
 <p><img alt="Add crypto source" src="../images/10_create_crypto_source_dialog.png" /></p>
@@ -1976,24 +2057,129 @@ when generating or using keys.</p>
 </tr>
 <tr>
 <td>Store Type</td>
-<td>PKCS#11 / SOFTWARE</td>
+<td><strong>SOFTWARE</strong>, <strong>PKCS11</strong>, <strong>AWS KMS</strong>, or <strong>Azure key Vault</strong></td>
 <td>Yes</td>
-<td>PKCS#11 = HSM-backed; SOFTWARE = software store</td>
+<td>PKCS11 = HSM-backed; SOFTWARE = software store; AWS KMS and Azure key Vault are cloud-managed key stores. Choosing a cloud store type reveals a <strong>Store config</strong> section below with store-specific fields (see below).</td>
 </tr>
 </tbody>
 </table>
+<h3 id="store-config-aws-kms">Store config — AWS KMS</h3>
+<p><img alt="Create crypto source – AWS KMS" src="../images/10_create_crypto_source_dialog_aws_kms.png" /></p>
+<p>Shown only when <strong>Store Type = AWS KMS</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region</td>
+<td>The AWS region hosting the KMS keys (e.g. <code>us-east-1</code>).</td>
+<td>KMS keys and API calls are region-scoped; must match where the keys live.</td>
+</tr>
+<tr>
+<td>Access key</td>
+<td>The AWS access key ID used to authenticate to KMS.</td>
+<td>Identifies the IAM credential used for signing/key operations.</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>The AWS secret access key paired with the access key.</td>
+<td>Authenticates the access key; treat as sensitive credential material.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="store-config-azure-key-vault">Store config — Azure key Vault</h3>
+<p>Shown only when <strong>Store Type = Azure key Vault</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Key Vault URL</td>
+<td>The vault's DNS URL (e.g. <code>https://&lt;vault-name&gt;.vault.azure.net/</code>).</td>
+<td>Points the platform at the specific Key Vault instance holding the keys.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fields-edit-crypto-source-dialog">Fields — Edit Crypto Source dialog</h2>
+<p><img alt="Edit crypto source" src="../images/10_edit_crypto_source_dialog.png" /></p>
+<p>Opened via <strong>Edit</strong> on a row. For a <strong>PKCS11</strong> source it shows read-only identity fields plus two
+editable fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Editable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Display name.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Store type</td>
+<td>The store type (e.g. <code>PKCS11</code>).</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Token name</td>
+<td>The HSM token's name (e.g. <code>ca_utimaco</code>).</td>
+<td>No — read-only, from the token</td>
+</tr>
+<tr>
+<td>Vendor</td>
+<td>The HSM vendor (e.g. <code>UTIMACO</code>).</td>
+<td>No — read-only, from the token</td>
+</tr>
+<tr>
+<td>Slot</td>
+<td>The HSM slot number the token occupies.</td>
+<td>No — read-only, from the token</td>
+</tr>
+<tr>
+<td>Store's PIN</td>
+<td>The PIN/password protecting the token.</td>
+<td>Yes — leave blank to keep the stored value</td>
+</tr>
+<tr>
+<td>Library path</td>
+<td>Path to the PKCS#11 vendor library on the server (e.g. <code>/usr/lib/libcs_pkcs11_R3.so</code>).</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Cancel</strong> — discards changes. <strong>Update</strong> — saves the editable fields.</li>
+</ul>
 <h2 id="step-by-step">Step-by-Step</h2>
 <ol>
 <li>Open <strong>Crypto Sources</strong>.</li>
 <li>Click <strong>Add</strong>.</li>
 <li>Enter <strong>Name</strong>, select the <strong>Connector</strong> and <strong>Store Type</strong>.</li>
+<li>For <strong>AWS KMS</strong> or <strong>Azure key Vault</strong>, fill in the <strong>Store config</strong> fields that appear.</li>
 <li>Click <strong>Create</strong>.</li>
+<li>Use <strong>Test connection</strong> on a row to verify the store is reachable before relying on it.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Important Notes</p>
 <ul>
 <li>A crypto source requires a configured <strong>Crypto Engine</strong> connector.</li>
-<li>Choose <strong>PKCS#11</strong> for HSM-backed keys; <strong>SOFTWARE</strong> keeps keys in the software store.</li>
+<li>Choose <strong>PKCS#11</strong> for HSM-backed keys, <strong>SOFTWARE</strong> for the software store, or <strong>AWS KMS</strong> /
+  <strong>Azure key Vault</strong> for a cloud-managed key store.</li>
+<li>Cloud credentials (AWS access/secret key, Azure vault URL) are entered once at creation; use
+  <strong>Edit</strong> afterwards for PKCS#11 PIN/library-path changes.</li>
 </ul>
 </div>
 

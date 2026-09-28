@@ -1092,6 +1092,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rollover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2033,6 +2055,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rollover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2089,10 +2133,10 @@ tabs.</p>
 <h2 id="navigation">Navigation</h2>
 <p><code>Certificate Authorities</code> → select a CA → tabs.</p>
 <h2 id="configuration-tabs">Configuration tabs</h2>
-<p>The detail pane exposes five tabs: Key Configuration, Certificate Data, Directives, CRL
-Settings, and Distribution. Configuration is locked (read-only) once the CA certificate has
-been issued or the CA has been revoked — plan values before signing. A single <strong>Save
-configuration</strong> button at the bottom persists all editable tabs together.</p>
+<p>The detail pane exposes seven tabs: Key Configuration, Certificate Data, Directives, CRL
+Settings, Distribution, Rollover, and History. Configuration is locked (read-only) once the CA
+certificate has been issued or the CA has been revoked — plan values before signing. A single
+<strong>Save configuration</strong> button at the bottom persists all editable tabs together.</p>
 <h3 id="key-configuration">Key Configuration</h3>
 <p>Creates or reviews the CA's private key pair. Until a key pair exists you supply the fields
 below and click <strong>Generate Key Pair</strong>; afterwards the tab shows the generated key's details
@@ -2405,14 +2449,91 @@ global default sync target on a per-CA basis.</p>
   page.</li>
 </ul>
 </div>
+<h3 id="rollover">Rollover</h3>
+<p>Shows this CA's place in a rekey/rollover succession chain, if any. Blank/inactive when the CA
+has neither been superseded nor is itself a successor.</p>
+<p><img alt="CA – Rollover tab" src="../images/14_ca_rollover_tab.png" /></p>
+<ul>
+<li><strong>If this CA replaced an earlier one</strong> (created via <strong>Rekey</strong> or <strong>Key rollover</strong> — see
+  <a href="#actions">Actions</a> below): shows <strong>Replaces</strong> with the predecessor CA's name, a link to open
+  it, and a note that the predecessor keeps serving revocation (CRL/OCSP) for certificates it
+  issued.</li>
+<li><strong>If this CA has been superseded</strong> (rolled over to a successor): shows the <strong>Successor CA</strong>
+  name, the <strong>Handed over</strong> timestamp, and — for a <strong>Root CA</strong> only — a <strong>Link certificates</strong>
+  section with two downloadable certificates, <strong>new_with_old</strong> and <strong>old_with_new</strong>, that
+  cryptographically bridge the old and new root keys (classic root key-rollover link
+  certificates). Subordinate (Sub) CAs never get link certificates: their parent CA signs the
+  successor directly, so both chain to the same trust anchor without needing one.</li>
+</ul>
+<p><img alt="CA – Rollover tab, Root CA link certificates" src="../images/14_ca_rollover_tab_root_link_certs.png" /></p>
+<h3 id="history">History</h3>
+<p>A read-only audit trail of every certificate this CA has ever held — relevant after a <strong>Renew
+certificate</strong> or <strong>Rekey</strong>, since either can leave more than one certificate in the CA's past.</p>
+<p><img alt="CA – History tab" src="../images/14_ca_history_tab.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#</td>
+<td>Sequence number, oldest first.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>e.g. <strong>In use</strong> for the certificate currently active.</td>
+</tr>
+<tr>
+<td>Serial number</td>
+<td>The certificate's serial number.</td>
+</tr>
+<tr>
+<td>Valid until</td>
+<td>Expiry date of that certificate.</td>
+</tr>
+<tr>
+<td>Key</td>
+<td>The key-pair name backing that certificate.</td>
+</tr>
+</tbody>
+</table>
+<p>Superseded certificates are kept in this list because certificates issued while they were active
+may still be in use.</p>
 <h2 id="actions">Actions</h2>
 <ul>
 <li>Per-tab <strong>Save</strong> — persist configuration.</li>
+<li><strong>Rename this CA</strong> — inline edit of the CA's display name next to its heading; <strong>Save</strong> /
+  <strong>Cancel</strong>.</li>
 <li><strong>Download CRL</strong> — export the CA's current CRL.</li>
 <li><strong>Publish CRL</strong> — trigger publication of a new CRL for this CA immediately.</li>
 <li><strong>Download Certificate</strong> — export the CA certificate.</li>
+<li><strong>More actions</strong> menu:<ul>
+<li><strong>Renew certificate</strong> — issues a new certificate for this CA using its <strong>existing key</strong>.
+  Certificates already issued by this CA keep working; nothing is revoked or re-issued.
+  Optional <strong>Validity</strong> override (value + Days/Months/Years) — leave blank to use the CA's
+  renewal policy or the template default.</li>
+<li><strong>Rekey</strong> — creates a <strong>successor CA with a new key</strong>, moves issuance to it, then
+  automatically <strong>re-issues every certificate</strong> this CA issued under the successor and
+  <strong>revokes this CA and its old certificates</strong>. Fields: optional <strong>Successor CA name</strong>
+  (defaults to a generated name) and <strong>Template</strong>. Use when the current key must stop being
+  trusted.</li>
+<li><strong>Key rollover</strong> — creates a <strong>successor CA with a new key</strong> and moves <em>new</em> issuance to
+  it, but does <strong>not</strong> re-issue or revoke anything: this CA keeps publishing CRLs and
+  answering OCSP for the certificates it already issued, until its own certificate expires.
+  Fields: optional <strong>Successor CA name</strong> and <strong>Template</strong>. Use for a scheduled key rotation
+  where the old key should keep working.</li>
 <li><strong>Revoke CA</strong> — revoke the CA (invalidates everything it issued; irreversible).</li>
 </ul>
+</li>
+<li>The CA list shows a <strong>Rekeyed</strong> or <strong>Rolled over</strong> badge next to a superseded CA's type, and the
+  detail pane's <strong>Status</strong> field shows a link — <strong>Succeeds &lt;name&gt;</strong> on a successor, or
+  <strong>Rolled over → &lt;name&gt;</strong> on a predecessor — to jump directly to the linked CA. See
+  <a href="#rollover">Rollover</a> and <a href="#history">History</a> above for the full chain and certificate record.</li>
+</ul>
+<p><img alt="CA – More actions menu" src="../images/14_ca_more_actions_menu.png" /></p>
 <h2 id="step-by-step">Step-by-Step</h2>
 <ol>
 <li>Open <strong>Certificate Authorities</strong> and select the CA.</li>
@@ -2424,11 +2545,16 @@ global default sync target on a per-CA basis.</p>
 <p class="admonition-title">Important Notes</p>
 <ul>
 <li>OCSP responses are served by a <a href="../15_validation_authority/">Validation Authority</a>.</li>
+<li><strong>Renew certificate</strong>, <strong>Rekey</strong>, and <strong>Key rollover</strong> are three different operations —
+  pick based on whether the key stays the same (Renew), must stop being trusted (Rekey), or
+  is being rotated on schedule while the old key keeps working (Key rollover).</li>
 </ul>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Critical Warning</p>
-<p>Revoking a CA cascades to all certificates that CA issued — use with extreme care.</p>
+<p>Revoking a CA cascades to all certificates that CA issued — use with extreme care. <strong>Rekey</strong>
+has the same effect on this CA and its own certificates once the successor is signed — review
+the "What this commits you to" summary in its dialog before confirming.</p>
 </div>
 
 
